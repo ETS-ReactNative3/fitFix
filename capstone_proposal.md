@@ -13,11 +13,14 @@ fitfix will return a tailored workout routine for a user based on the specific v
 ### List the absolute minimum features the project requires to meet this purpose or goal:
 - One form submission returns one workout session
 - Session is based on time limit, equipment, muscle groups targeted, and t/f weights
+- Returned session data uses ExerciseDB API via Redux-Thunk or Fetch API
+- Styling: using CSS3, `styled-components` and Bootstrap, application will have a navigation and footer section along with clean and contemporary styling with an athletic aesthetic.
 
 ---
 
 ### What tools, frameworks, libraries, APIs, modules and/or other resources (whatever is specific to your track, and your language) will you use to create this MVP? List them all here. Be specific.
-- Vanilla Javascript
+- First Choice: React with Redux, Redux-Thunk
+- Backup: Vanilla Javascript with Fetch API
 - [ExerciseDB API](https://rapidapi.com/justin-WFnsXH_t6/api/exercisedb)
 - Bootstrap
 - HTML 5
@@ -34,5 +37,12 @@ fitfix will return a tailored workout routine for a user based on the specific v
 ---
 
 ### What additional tools, frameworks, libraries, APIs, or other resources will these additional features require?
-- OAuth
 - Timing API
+- firebase authentication - for stretch goal of creating user profiles
+- firestore - for stretch goal of storing workouts
+- OAuth for js
+
+---
+
+### Is there anything else you'd like your instructor to know?
+- Nothing else at this time
