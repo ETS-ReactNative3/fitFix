@@ -1,12 +1,30 @@
-# Misc Notes
+# **Misc Notes**
 
-## Useful REST API Wger endpoints:
-(list of public vs private endpoints: https://wger.de/en/software/api)\
-(all endpoint urls: https://wger.de/api/v2/)
+## **To Do List:**
+### Planning
+- [x] Find usable API
+- [x] map out endpoints
+- [x] create initial components diagram
+- [x] research application construction order
+- [x] create to do list
+
+### Construction
+- [ ] Organize components according to hierarchy
+- [ ] Build a static version in React (Native?)
+- [ ] Identify the minimal representation of UI state / think about state
+- [ ] Test and write reducers
+- [ ] Add redux
+- [ ] Incorporate api (fetch())
+
+---
+
+## **REST API Wger endpoints:**
+- (list of public vs private endpoints: https://wger.de/en/software/api)\
+- (all endpoint urls: https://wger.de/api/v2/)
 
 ## Public Endpoints
 ### "equipment": "https://wger.de/api/v2/equipment/"
-- ##### Ids
+- ##### Id
 - ##### equipment name
 ---
 ### "exercise": "https://wger.de/api/v2/exercise/",
@@ -33,37 +51,35 @@
 - ##### image_url_secondary
 ---
 
+## **form brainstorm**
+
+- time limit - NOT DOING
+- equipment
+- muscle groups
+<br/>
+
+1. first question: body parts -> options are presented as checkboxes
+2. depending on body parts selected, muscle groups will be shown -> again checkboxes
+3.  Equipment available -> checkboxes
+4. submit
+
+**FIRST Return**
+- List of all exercise objects that match equipment and muscle group\
+ <SUP>_(there should be some kind of limitation on quantity for these)_</SUP>
+- user is then able to go down list and select which ones they'd like to add to their workout
+
+**SECOND Return**
+- then the final page is the workout list with the following details:
+  - ##### name
+  - ##### description
+  - ##### variations : calling by id
+  - ##### links to variation exercises
+  - ##### equipment
+  - ##### muscles and muscles secondary with images
+  - ##### category (which is body part or muscle group)
 
 ---
-## form brainstorm
-
-time limit - NOT DOING
-equipment
-muscle groups
-
-
-- first question: body parts -> options are presented as checkboxes
-- depending on body parts selected, muscle groups will be shown -> again checkboxes
-- Equipment available -> checkboxes
-- submit
-
-Return->
-List of all exercise objects that match equipment and muscle group
-
-^ there should be some kind of limitation on quantity for these
-
-user is then able to go down list and select which ones they'd like to add to their workout
-
-then the final page is the workout list with the following details:
-- ##### name
-- ##### description
-- ##### variations : calling by id
-- ##### links to variation exercises
-- ##### equipment
-- ##### muscles and muscles secondary with images
-- ##### category (which is body part or muscle group)
-
-### components I'll need:
+## **Components:**
 - app
 - header
 - footer(?)
