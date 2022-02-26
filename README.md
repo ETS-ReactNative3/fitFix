@@ -15,7 +15,7 @@ _fitfix will return a tailored workout routine for a user based on the specific 
 ---
 ### Tools & Technologies
 - Vanilla Javascript
-- [ExerciseDB API](https://rapidapi.com/justin-WFnsXH_t6/api/exercisedb)
+- [REST API Wger](https://wger.de/en/software/api)
 - Bootstrap
 - HTML 5
 - CSS 3
