@@ -8,6 +8,8 @@
 _fitfix will return a tailored workout routine for a user based on the specific variables that user feeds into the site. These variables might include factors such as time limit, exercise equipment available, focus muscle groups, weighted/bodyweight._
 
 ---
+<img title="component diagram" src="img/fitfixComponents.svg" width="400px">
+
 ### MVP
 - One form submission returns one workout session
 - Session is based on time limit, equipment, muscle groups targeted, and t/f weights
