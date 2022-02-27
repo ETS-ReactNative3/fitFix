@@ -8,6 +8,10 @@ export default function Details({navigation}) {
     <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
       <Text>THIS IS THE Details COMPONENT</Text>
       <StatusBar style="auto" />
+
+
+
+
       <Button
         title="Back to List"
         onPress={() => navigation.navigate('List')}

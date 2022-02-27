@@ -1,21 +1,17 @@
 import * as React from 'react';
 import { StyleSheet, Button, View, Text } from 'react-native';
 import { StatusBar } from 'expo-status-bar';
-import ListItem from './ListItem';
 
 
-export default function List({navigation}) {
+export default function ListItem({navigation}) {
   return (
     <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-      <Text>THIS IS THE List COMPONENT</Text>
+      <Text>LIST ITEM</Text>
+      <Text>Exercise Name</Text>
+      <Text>Exercise Description: fjas;ldjfls dslkfjdjk dsjfdksjf fds sdj lkjkljsdf jkljfs.</Text>
+      <Text>Equipment</Text>
+      <Text>Muscle</Text>
       <StatusBar style="auto" />
-      <Button
-        title="See Exercise Details"
-        onPress={() => navigation.navigate('Details')}
-      />
-      <ListItem />
-      <ListItem />
-      <ListItem />
     </View>
   );
 }
