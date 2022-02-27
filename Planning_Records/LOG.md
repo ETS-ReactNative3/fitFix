@@ -23,4 +23,16 @@ _02/25/22_|_18:16_|_End work session - WIP: Project To Do List_
  02/26/22|09:19|Session Start: continue to do list
  02/26/22|09:45|reading react native documentation
  02/26/22|10:00|watching video: https://www.youtube.com/watch?v=u1JQwaIds7A&ab_channel=FullstackDevelopment
- 02/26/22|10:17|Continue to do list
+ 02/26/22|10:17|watching video: https://www.youtube.com/watch?v=DYJVl6vVCEI&ab_channel=ProgrammingwithMash
+ 02/26/22|10:25|Finish to do list
+ 02/26/22|10:31|Component hierarchy
+ 02/26/22|10:41|Setting up environment for react native
+ 02/26/22|11:53|**-BREAK FOR LUNCH-**
+ 02/26/22|12:56|Return to app setup
+ 02/26/22|13:50|Watching video: https://www.youtube.com/watch?v=OmQCU-3KPms&ab_channel=TheNetNinja
+ 02/26/22|14:04|Build component files
+ 02/26/22|14:37|Watching https://www.youtube.com/watch?v=cS4PgI3zBzY&ab_channel=TheNetNinja & following along
+ 02/26/22|15:09|**BREAK - WIP: left off at 7:49 of previous video**
+ 02/26/22|15:42|Continue video & navigation components
+ 02/26/22|16:13|Reading React Navigation Docs https://reactnavigation.org/docs/3.x/hello-react-navigation
+ 02/26/22|16:30|Troubleshooting filenaming issue

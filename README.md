@@ -11,17 +11,20 @@ _fitfix will return a tailored workout routine for a user based on the specific 
 <img title="component diagram" src="img/fitfixComponents.svg" width="400px">
 
 ### MVP
-- One form submission returns one workout session
-- Session is based on time limit, equipment, muscle groups targeted, and t/f weights
+- Two form submissions returns one workout session
+- Return info is based on available equipment & muscle groups to target
+- Returned session data uses REST API Wger via Fetch()
+- Styling: using React Native built-in styling functionality
+- Navigation: React Navigation
 
 ---
 ### Tools & Technologies
-- Vanilla Javascript
-- [REST API Wger](https://wger.de/en/software/api)
-- Bootstrap
-- HTML 5
+- React Native
+- [REST API Wger](https://wger.de/en/software/api) - fetch()
 - CSS 3
 - Postman
+- Expo
+- React-navigation
 
 ---
 

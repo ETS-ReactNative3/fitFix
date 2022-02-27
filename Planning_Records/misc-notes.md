@@ -9,11 +9,11 @@
 - [x] create to do list
 
 ### Construction
-- [ ] Organize components according to hierarchy
-- [ ] Build a static version in React (Native?)
+- [X] Organize components according to hierarchy
+- [ ] Build a static version in React Native
 - [ ] Identify the minimal representation of UI state / think about state
-- [ ] Test and write reducers
-- [ ] Add redux
+<!-- - [ ] Test and write reducers -->
+<!-- - [ ] Add redux -->
 - [ ] Incorporate api (fetch())
 
 ---
@@ -79,10 +79,24 @@
   - ##### category (which is body part or muscle group)
 
 ---
-## **Components:**
-- app
-- header
-- footer(?)
-- form (fields, submit)
-- all results list (form)
-- returned full workout
+## **Components:** (top to bottom)
+```
+1. App
+  A. header
+    1. Main image
+  B. Workout Controller
+    1. Workout form
+      a. Target Body Parts
+      b. Muscle Groups
+      c. Equipment
+      d. Submit
+    2. Items Form
+      a. Individual exercise (reusable)
+      b. Submit
+    3. Final exercise list
+      a. Individual exercise (reusable)
+```
+
+## **Resources**
+
+- React Navigation: https://www.youtube.com/watch?v=OmQCU-3KPms&ab_channel=TheNetNinja
