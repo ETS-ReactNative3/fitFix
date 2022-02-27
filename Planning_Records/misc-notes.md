@@ -1,5 +1,8 @@
 # **Misc Notes**
 
+`expo start`
+`npm install @react-navigation/native-stack`
+
 ## **To Do List:**
 ### Planning
 - [x] Find usable API

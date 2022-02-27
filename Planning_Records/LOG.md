@@ -36,3 +36,8 @@ _02/25/22_|_18:16_|_End work session - WIP: Project To Do List_
  02/26/22|15:42|Continue video & navigation components
  02/26/22|16:13|Reading React Navigation Docs https://reactnavigation.org/docs/3.x/hello-react-navigation
  02/26/22|16:30|Troubleshooting filenaming issue
+ 02/26/22|16:45|Reading React Nav documentation: creating dummy project to follow along
+_02/26/22_|_17:20_|_End work session - WIP: Adding components to navigation, https://reactnavigation.org/docs/hello-react-navigation 3/4 down page_
+ | .....|
+**Session Total** | **06:25** | **Running Total: 10:37**
+ | .....|
