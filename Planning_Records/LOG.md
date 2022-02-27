@@ -31,7 +31,7 @@ _02/25/22_|_18:16_|_End work session - WIP: Project To Do List_
  02/26/22|12:56|Return to app setup
  02/26/22|13:50|Watching video: https://www.youtube.com/watch?v=OmQCU-3KPms&ab_channel=TheNetNinja
  02/26/22|14:04|Build component files
- 02/26/22|14:37|Watching https://www.youtube.com/watch?v=cS4PgI3zBzY&ab_channel=TheNetNinja & following along
+ 02/26/22|14:37|Watching https://www.youtube.com/watch?v=cS4PgI3zBzY&ab_channel=TheNetNinja & following along (_Issue: syntax out of date and not working_)
  02/26/22|15:09|**BREAK - WIP: left off at 7:49 of previous video**
  02/26/22|15:42|Continue video & navigation components
  02/26/22|16:13|Reading React Navigation Docs https://reactnavigation.org/docs/3.x/hello-react-navigation
@@ -41,3 +41,5 @@ _02/26/22_|_17:20_|_End work session - WIP: Adding components to navigation, htt
  | .....|
 **Session Total** | **06:25** | **Running Total: 10:37**
  | .....|
+  02/27/22|09:44|Session Start: Continue Nav
+  02/27/22|09:59|Redrawing components/views
