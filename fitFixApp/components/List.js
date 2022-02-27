@@ -2,10 +2,10 @@ import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
 
 
-export default function Header() {
+export default function List() {
   return (
     <View style={styles.container}>
-      <Text>THIS IS THE HEADER COMPONENT</Text>
+      <Text>THIS IS THE List COMPONENT</Text>
       <StatusBar style="auto" />
     </View>
   );
