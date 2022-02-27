@@ -1,6 +1,8 @@
 import * as React from 'react';
 import { StyleSheet, Button, View, Text } from 'react-native';
 import { StatusBar } from 'expo-status-bar';
+import ListItem from './ListItem';
+
 
 
 export default function Form2({navigation}) {
@@ -12,6 +14,7 @@ export default function Form2({navigation}) {
         title="Go to List"
         onPress={() => navigation.navigate('List')}
       />
+      <ListItem />
     </View>
   );
 }
