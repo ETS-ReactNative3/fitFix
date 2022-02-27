@@ -44,3 +44,4 @@ _02/26/22_|_17:20_|_End work session - WIP: Adding components to navigation, htt
   02/27/22|09:44|Session Start: Continue Nav
   02/27/22|09:59|Redrawing components/views
   02/27/22|10:17|Continue Nav
+  02/27/22|10:53|Add all screens

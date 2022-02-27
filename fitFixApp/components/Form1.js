@@ -3,14 +3,14 @@ import { StyleSheet, Button, View, Text } from 'react-native';
 import { StatusBar } from 'expo-status-bar';
 
 
-export default function Home({navigation}) {
+export default function Form1({navigation}) {
   return (
     <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-      <Text>THIS IS THE HOME COMPONENT</Text>
+      <Text>THIS IS THE FORM1 COMPONENT</Text>
       <StatusBar style="auto" />
       <Button
-        title="Go to Form1"
-        onPress={() => navigation.navigate('Form1')}
+        title="Go to Form2"
+        onPress={() => navigation.navigate('Form2')}
       />
     </View>
   );
