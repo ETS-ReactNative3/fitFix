@@ -49,3 +49,5 @@ _02/26/22_|_17:20_|_End work session - WIP: Adding components to navigation, htt
   02/27/22|11:39|Troubleshooting issue where app doesn't load on device with expo go
   02/27/22|12:08|Further building out each component (static)
   02/27/22|12:18|Reading about / troubleshooting adding static images
+  02/27/22|13:13|Reading about RN Forms: https://www.educba.com/react-native-form/
+  

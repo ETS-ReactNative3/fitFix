@@ -1,7 +1,11 @@
 # **Misc Notes**
 
 `expo start`
-`npm install @react-navigation/native-stack`
+
+## **Package Installation Reference:**
+```npm install @react-navigation/native-stack```
+
+```npm install react-hook-form```
 
 ## **To Do List:**
 ### Planning

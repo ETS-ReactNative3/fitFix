@@ -6,11 +6,12 @@ import { StatusBar } from 'expo-status-bar';
 export default function Home({navigation}) {
   return (
     <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-      <Text>THIS IS THE HOME COMPONENT</Text>
+      <Text>fitfix</Text>
+      <Text>Quick Workout Generator</Text>
       <Image style={styles.image} source={require('../assets/exercise_equipment.jpg')} />
       <StatusBar style="auto" />
       <Button
-        title="Go to Form1"
+        title="Let's Get Started"
         onPress={() => navigation.navigate('Form1')}
       />
     </View>

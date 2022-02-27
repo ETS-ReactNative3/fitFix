@@ -26,6 +26,8 @@ fitfix will return a tailored workout routine for a user based on the specific v
 - React Native built in styling with css
 - Expo
 - Postman
+- [React Navigation](https://reactnavigation.org/)
+- [React hook form v7](https://react-hook-form.com/get-started)
 
 ---
 

@@ -25,6 +25,7 @@ _fitfix will return a tailored workout routine for a user based on the specific 
 - Postman
 - Expo
 - React-navigation
+- [React hook form v7](https://react-hook-form.com/get-started)
 
 ---
 
