@@ -60,3 +60,5 @@
 | 03/04/22          | 08:00     | No work completed: WIP video                                                                                                                                  |
 | .....             |           |
 | 03/06/22          | 13:58     | Session Start: Complete Readme File                                                                                                                           |
+| 03/06/22          | 14:12     | Back to building out static components and adding props                                                                                                       |
+| 03/06/22          | 14:12     | Create delete functionality on List                                                                                                                           |

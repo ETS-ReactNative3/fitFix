@@ -1,25 +1,25 @@
-import * as React from 'react';
-import { StyleSheet, Button, View, Text } from 'react-native';
-import { StatusBar } from 'expo-status-bar';
+import * as React from "react";
+import { StyleSheet, Button, View, Text } from "react-native";
+import { StatusBar } from "expo-status-bar";
 import { useForm } from "react-hook-form";
 
-
-export default function Form1({navigation}) {
-  const { register, handleSubmit, watch, formState: {errors}}  = useForm();
+export default function Form1({ navigation }) {
+  const {
+    register,
+    handleSubmit,
+    watch,
+    formState: { errors }
+  } = useForm();
   const onSubmit = data => console.log(data);
 
   console.log(watch("example"));
 
   return (
-    <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
+    <View style={{ flex: 1, alignItems: "center", justifyContent: "center" }}>
       <Text>THIS IS THE FORM1 COMPONENT</Text>
       <StatusBar style="auto" />
-      <Button
-        title="Go to Form2"
-        onPress={() => navigation.navigate('Form2')}
-      />
+      <Button title="Go to List" onPress={() => navigation.navigate("List")} />
       <form onSubmit={handleSubmit(onSubmit)}>
-
         <input defaultValue="test" {...register("example")} />
 
         <input {...register("exampleRequired", { required: true })} />
@@ -35,19 +35,16 @@ export default function Form1({navigation}) {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
+    backgroundColor: "#fff",
+    alignItems: "center",
+    justifyContent: "center"
+  }
 });
-
-
 
 // PRE-REACT HOOK FORM
 // import * as React from 'react';
 // import { StyleSheet, Button, View, Text } from 'react-native';
 // import { StatusBar } from 'expo-status-bar';
-
 
 // export default function Form1({navigation}) {
 //   return (
