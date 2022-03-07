@@ -1,5 +1,13 @@
 import React, { useState } from "react";
-import { StyleSheet, Button, View, Text, FlatList, Modal, TouchableOpacity } from "react-native";
+import {
+  StyleSheet,
+  Button,
+  View,
+  Text,
+  FlatList,
+  Modal,
+  TouchableOpacity,
+} from "react-native";
 import { StatusBar } from "expo-status-bar";
 import ListItem from "./ListItem";
 import { uuid } from "uuidv4";
@@ -28,7 +36,7 @@ export default function List({ navigation }) {
       language: 2,
       license: 2,
       license_author: "deusinvictus",
-      variations: []
+      variations: [],
     },
     {
       id: 174,
@@ -46,7 +54,7 @@ export default function List({ navigation }) {
       language: 1,
       license: 1,
       license_author: "flori",
-      variations: []
+      variations: [],
     },
     {
       id: 223,
@@ -63,19 +71,20 @@ export default function List({ navigation }) {
       language: 1,
       license: 1,
       license_author: "Marius",
-      variations: []
-    }
+      variations: [],
+    },
   ]);
 
-  const deleteItem = id => {
-    setItems(prevItems => {
+  const deleteItem = (id) => {
+    setItems((prevItems) => {
       alert("delete: " + id);
-      return prevItems.filter(item => item.id != id);
+      return prevItems.filter((item) => item.id != id);
     });
   };
 
-  const onItemClick = id => {
-    return alert(id);
+  const onItemClick = (id) => {
+    alert(id);
+    return navigation.navigate("Form1");
   };
 
   return (
@@ -100,8 +109,8 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: "#fff",
     alignItems: "center",
-    justifyContent: "center"
-  }
+    justifyContent: "center",
+  },
 });
 
 // const exerciseData = [
