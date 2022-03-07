@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { StyleSheet, Button, View, Text, FlatList } from "react-native";
+import { StyleSheet, Button, View, Text, FlatList, Modal, TouchableOpacity } from "react-native";
 import { StatusBar } from "expo-status-bar";
 import ListItem from "./ListItem";
 import { uuid } from "uuidv4";
@@ -73,12 +73,23 @@ export default function List({ navigation }) {
     });
   };
 
+  const onItemClick = id => {
+    console.log(id);
+  };
+
   return (
     <View style={{ flex: 1, alignItems: "center", justifyContent: "center" }}>
       <Text>THIS IS THE List COMPONENT</Text>
       <StatusBar style="auto" />
       <Button title="See Exercise Details" onPress={() => navigation.navigate("Details")} />
-      <FlatList data={items} renderItem={({ item }) => <ListItem item={item} deleteItem={deleteItem} />} />
+      <FlatList
+        data={items}
+        renderItem={({ item }) => (
+          <TouchableOpacity onPress={() => onItemClick(item.id)}>
+            <ListItem item={item} deleteItem={deleteItem} />
+          </TouchableOpacity>
+        )}
+      />
     </View>
   );
 }

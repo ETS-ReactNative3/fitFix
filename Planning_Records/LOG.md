@@ -63,3 +63,4 @@
 | 03/06/22          | 14:12     | Back to building out static components and adding props                                                                                                       |
 | 03/06/22          | 14:12     | Getting exercise list ListItems to appear on list page                                                                                                        |
 | 03/06/22          | 15:26     | Create delete functionality for each item on List                                                                                                             |
+| 03/06/22          | 16:10     | Navigate to item details when list item is clicked. Watching videos https://www.youtube.com/watch?v=iMCM1NceGJY&ab_channel=TheNetNinja                        |
