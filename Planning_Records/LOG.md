@@ -75,3 +75,4 @@
 | .....             |
 | **Session Total** | **06:08** | **Running Total: 20:01**                                                                                                                                 |
 | .....             |
+| 03/07/22          | 12:34     | Session Start: Continue reading React wk 1: lesson 19                                                                                                    |
