@@ -64,3 +64,4 @@
 | 03/06/22          | 14:12     | Getting exercise list ListItems to appear on list page                                                                                                        |
 | 03/06/22          | 15:26     | Create delete functionality for each item on List                                                                                                             |
 | 03/06/22          | 16:10     | Navigate to item details when list item is clicked. Watching videos https://www.youtube.com/watch?v=iMCM1NceGJY&ab_channel=TheNetNinja                        |
+| _03/06/22_        | _17:14_   | **<---BREAK - WIP: List/ListITem/Details, getting the button to navigate to the details page, plan on return: read lessons from react fundamentals--->**      |

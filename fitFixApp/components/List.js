@@ -82,12 +82,12 @@ export default function List({ navigation }) {
     <View style={{ flex: 1, alignItems: "center", justifyContent: "center" }}>
       <Text>THIS IS THE List COMPONENT</Text>
       <StatusBar style="auto" />
-      {/* <Button title="See Exercise Details" onPress={() => navigation.navigate("Details")} /> */}
       <FlatList
         data={items}
         renderItem={({ item }) => (
           <TouchableOpacity onPress={() => onItemClick(item.id)}>
             <ListItem item={item} deleteItem={deleteItem} />
+            {/* <Button title="See Exercise Details" onPress={() => navigation.navigate("Details")} /> */}
           </TouchableOpacity>
         )}
       />
