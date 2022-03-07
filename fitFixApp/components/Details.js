@@ -8,10 +8,7 @@ export default function Details({ navigation }) {
       <Text>THIS IS THE Details COMPONENT</Text>
       <StatusBar style="auto" />
 
-      <Button
-        title="Back to List"
-        onPress={() => navigation.navigate("List")}
-      />
+      <Button title="Back to List" onPress={() => navigation.navigate("List")} />
       <Button title="Start Over" onPress={() => navigation.popToTop()} />
     </View>
   );
@@ -22,6 +19,6 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: "#fff",
     alignItems: "center",
-    justifyContent: "center",
-  },
+    justifyContent: "center"
+  }
 });

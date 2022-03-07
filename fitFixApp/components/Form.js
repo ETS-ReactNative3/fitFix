@@ -3,14 +3,14 @@ import { StyleSheet, Button, View, Text } from "react-native";
 import { StatusBar } from "expo-status-bar";
 import { useForm } from "react-hook-form";
 
-export default function Form1({ navigation }) {
+export default function Form({ navigation }) {
   const {
     register,
     handleSubmit,
     watch,
-    formState: { errors },
+    formState: { errors }
   } = useForm();
-  const onSubmit = (data) => console.log(data);
+  const onSubmit = data => console.log(data);
 
   console.log(watch("example"));
 
@@ -37,6 +37,6 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: "#fff",
     alignItems: "center",
-    justifyContent: "center",
-  },
+    justifyContent: "center"
+  }
 });
