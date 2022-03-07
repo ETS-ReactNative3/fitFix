@@ -68,3 +68,5 @@
 | 03/06/22          | 21:12     | reading https://heartbeat.comet.ml/getting-started-with-react-native-and-expo-using-hooks-in-2020-fb466c25b04c                                           |
 | 03/06/22          | 21:26     | reading/trying https://stackoverflow.com/questions/60038485/multiple-item-data-show-the-data-as-clicked-in-the-dynamically-modal-with-react              |
 | 03/06/22          | 21:31     | watching https://www.youtube.com/watch?v=g68InzYKXN0&ab_channel=TheFlutterFactory                                                                        |
+| 03/06/22          | 21:50     | going back to read react fundamental lessons                                                                                                             |
+| 03/06/22          | 22:01     | Starting with lesson 9, reverting components to functional                                                                                               |

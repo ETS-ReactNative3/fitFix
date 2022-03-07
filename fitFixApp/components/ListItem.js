@@ -8,7 +8,12 @@ export default function ListItem({ navigation, item, deleteItem }) {
     // <TouchableOpacity style={{ flex: 1, alignItems: "center", justifyContent: "center" }}>
     <View>
       <Text>{item.name}</Text>
-      <FontAwesome name="remove" size={24} color="red" onPress={() => deleteItem(item.id)} />
+      <FontAwesome
+        name="remove"
+        size={24}
+        color="red"
+        onPress={() => deleteItem(item.id)}
+      />
       <StatusBar style="auto" />
     </View>
     // </TouchableOpacity>
@@ -20,6 +25,6 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: "#fff",
     alignItems: "center",
-    justifyContent: "center"
-  }
+    justifyContent: "center",
+  },
 });
