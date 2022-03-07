@@ -16,7 +16,7 @@ export default function Form({ navigation }) {
 
   return (
     <View style={{ flex: 1, alignItems: "center", justifyContent: "center" }}>
-      <Text>THIS IS THE FORM1 COMPONENT</Text>
+      <Text>THIS IS THE FORM COMPONENT</Text>
       <StatusBar style="auto" />
       <Button title="Go to List" onPress={() => navigation.navigate("List")} />
       <form onSubmit={handleSubmit(onSubmit)}>
