@@ -69,19 +69,20 @@ export default function List({ navigation }) {
 
   const deleteItem = id => {
     setItems(prevItems => {
+      alert("delete: " + id);
       return prevItems.filter(item => item.id != id);
     });
   };
 
   const onItemClick = id => {
-    console.log(id);
+    return alert(id);
   };
 
   return (
     <View style={{ flex: 1, alignItems: "center", justifyContent: "center" }}>
       <Text>THIS IS THE List COMPONENT</Text>
       <StatusBar style="auto" />
-      <Button title="See Exercise Details" onPress={() => navigation.navigate("Details")} />
+      {/* <Button title="See Exercise Details" onPress={() => navigation.navigate("Details")} /> */}
       <FlatList
         data={items}
         renderItem={({ item }) => (

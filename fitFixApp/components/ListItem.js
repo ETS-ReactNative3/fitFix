@@ -5,13 +5,13 @@ import { FontAwesome } from "@expo/vector-icons";
 
 export default function ListItem({ navigation, item, deleteItem }) {
   return (
-    <TouchableOpacity style={{ flex: 1, alignItems: "center", justifyContent: "center" }}>
-      <View>
-        <Text>{item.name}</Text>
-        <FontAwesome name="remove" size={24} color="red" onPress={() => deleteItem(item.id)} />
-        <StatusBar style="auto" />
-      </View>
-    </TouchableOpacity>
+    // <TouchableOpacity style={{ flex: 1, alignItems: "center", justifyContent: "center" }}>
+    <View>
+      <Text>{item.name}</Text>
+      <FontAwesome name="remove" size={24} color="red" onPress={() => deleteItem(item.id)} />
+      <StatusBar style="auto" />
+    </View>
+    // </TouchableOpacity>
   );
 }
 
