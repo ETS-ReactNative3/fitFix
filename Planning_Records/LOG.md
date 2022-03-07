@@ -81,3 +81,5 @@
 | 03/07/22          | 12:52     | found flatlist-selectable in react native docs: https://reactnative.dev/docs/flatlist, implementing                                                             |
 | 03/07/22          | 13:40     | found https://www.youtube.com/watch?v=GPUiY0qJTiI&ab_channel=EasyCode-Sardar, looking at source code for comparison, return all files back to working condition |
 | 03/07/22          | 13:49     | https://www.youtube.com/watch?v=0kL6nhutjQ8&ab_channel=MadeWithMatt                                                                                             |
+| 03/07/22          | 14:37     | adding fetch() to list component https://reactnative.dev/docs/network#using-fetch                                                                               |
+| 03/07/22          | 15:12     | **Break**                                                                                                                                                       |
