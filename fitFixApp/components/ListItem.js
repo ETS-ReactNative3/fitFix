@@ -1,16 +1,14 @@
 import * as React from "react";
 import { StyleSheet, Button, View, Text, TouchableOpacity } from "react-native";
 import { StatusBar } from "expo-status-bar";
+import { FontAwesome } from "@expo/vector-icons";
 
-export default function ListItem({ navigation, item }) {
+export default function ListItem({ navigation, item, deleteItem }) {
   return (
     <TouchableOpacity style={{ flex: 1, alignItems: "center", justifyContent: "center" }}>
       <View>
         <Text>{item.name}</Text>
-        {/* <Text>Exercise Name</Text>
-        <Text>Exercise Description: fjas;ldjfls dslkfjdjk dsjfdksjf fds sdj lkjkljsdf jkljfs.</Text>
-        <Text>Equipment</Text>
-        <Text>Muscle</Text> */}
+        <FontAwesome name="remove" size={24} color="red" onPress={() => deleteItem(item.id)} />
         <StatusBar style="auto" />
       </View>
     </TouchableOpacity>

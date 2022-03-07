@@ -67,12 +67,18 @@ export default function List({ navigation }) {
     }
   ]);
 
+  const deleteItem = id => {
+    setItems(prevItems => {
+      return prevItems.filter(item => item.id != id);
+    });
+  };
+
   return (
     <View style={{ flex: 1, alignItems: "center", justifyContent: "center" }}>
       <Text>THIS IS THE List COMPONENT</Text>
       <StatusBar style="auto" />
       <Button title="See Exercise Details" onPress={() => navigation.navigate("Details")} />
-      <FlatList data={items} renderItem={({ item }) => <ListItem item={item} />} />
+      <FlatList data={items} renderItem={({ item }) => <ListItem item={item} deleteItem={deleteItem} />} />
     </View>
   );
 }

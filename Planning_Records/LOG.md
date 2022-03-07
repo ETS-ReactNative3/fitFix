@@ -61,5 +61,5 @@
 | .....             |           |
 | 03/06/22          | 13:58     | Session Start: Complete Readme File                                                                                                                           |
 | 03/06/22          | 14:12     | Back to building out static components and adding props                                                                                                       |
-| 03/06/22          | 14:12     | Geting exercise list ListItems to appear on list page                                                                                                         |
-| 03/06/22          | 14:12     | Create delete functionality for each item on List                                                                                                             |
+| 03/06/22          | 14:12     | Getting exercise list ListItems to appear on list page                                                                                                        |
+| 03/06/22          | 15:26     | Create delete functionality for each item on List                                                                                                             |
