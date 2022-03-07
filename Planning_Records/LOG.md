@@ -69,4 +69,9 @@
 | 03/06/22          | 21:26     | reading/trying https://stackoverflow.com/questions/60038485/multiple-item-data-show-the-data-as-clicked-in-the-dynamically-modal-with-react              |
 | 03/06/22          | 21:31     | watching https://www.youtube.com/watch?v=g68InzYKXN0&ab_channel=TheFlutterFactory                                                                        |
 | 03/06/22          | 21:50     | going back to read react fundamental lessons                                                                                                             |
-| 03/06/22          | 22:01     | Starting with lesson 9, reverting components to functional                                                                                               |
+| 03/06/22          | 22:01     | Starting with lesson 9, reverting components to pre-details changes                                                                                      |
+| 03/06/22          | 22:12     | Left off rereading lesson 19                                                                                                                             |
+| _03/06/22_        | _22:12_   | _End work session - WIP: Left off rereading lesson 19_                                                                                                   |
+| .....             |
+| **Session Total** | **06:08** | **Running Total: 20:01**                                                                                                                                 |
+| .....             |
