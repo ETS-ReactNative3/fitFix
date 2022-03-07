@@ -76,3 +76,6 @@
 | **Session Total** | **06:08** | **Running Total: 20:01**                                                                                                                                 |
 | .....             |
 | 03/07/22          | 12:34     | Session Start: Continue reading React wk 1: lesson 19                                                                                                    |
+| 03/07/22          | 12:46     | Considering using modal for detail view instead: reading https://www.educba.com/react-native-modal/?source=leftnav                                       |
+| 03/07/22          | 12:52     | back to LHTP lessons, converting list to class component (lesson 21)                                                                                     |
+| 03/07/22          | 12:52     | found flatlist-selectable in react native docs: https://reactnative.dev/docs/flatlist, implementing                                                      |
