@@ -84,5 +84,10 @@
 | 03/07/22          | 14:37     | adding fetch() to list component https://reactnative.dev/docs/network#using-fetch                                                                               |
 | 03/07/22          | 15:12     | **Break**                                                                                                                                                       |
 | 03/07/22          | 17:53     | Return to original, trouble shoot individual item click                                                                                                         |
-| 03/07/22          | 17:53     | Api call with axios                                                                                                                                             |
-| 03/07/22          | 17:53     | adding checkboxes to api forms                                                                                                                                  |
+| 03/07/22          | 18:10?    | Api call with axios                                                                                                                                             |
+| 03/07/22          | 19:53     | adding checkboxes to api forms                                                                                                                                  |
+| 03/07/22          | 19:53?    | Trying to get json response to pass to form component                                                                                                           |
+| _03/07/22 _       | _20:20_   | _End work session - WIP: Getting object to pass to form_                                                                                                        |
+| .....             |
+| **Session Total** | **06:55** | **Running Total: 26:56**                                                                                                                                        |
+| .....             |

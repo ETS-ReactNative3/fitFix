@@ -37,8 +37,8 @@ function App({ navigation }) {
       <Stack.Navigator>
         <Stack.Screen name="Home" component={Home} options={{ title: "Welcome" }} />
         <Stack.Screen name="Form" component={Form} options={{ title: "Form" }} muscles={muscles} equipment={equipment} />
-        <Stack.Screen name="List" component={List} options={{ title: "Exercise List" }} />
-        <Stack.Screen name="Details" component={Details} options={{ title: "Exercise Details" }} />
+        <Stack.Screen name="List" component={List} options={{ title: "Exercise List" }} exercises={exercises} />
+        <Stack.Screen name="Details" component={Details} options={{ title: "Exercise Details" }} exercises={exercises} />
       </Stack.Navigator>
     </NavigationContainer>
   );
