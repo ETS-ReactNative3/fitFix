@@ -24,56 +24,6 @@ const makeExerciseRequest = async () => {
     return false;
   }
 };
-// const makeEquipmentRequest = async () => {
-//   try {
-//     const response = await axios.get(`${baseUrl}/equipment/` /*, config*/);
-//     if (response.status === 200) {
-//       // response - object, eg { status: 200, message: 'OK' }
-//       console.log("equipment success stuff");
-//       console.log(response.data.results);
-//       return response.data.results;
-//     }
-//     return false;
-//   } catch (err) {
-//     console.error(err);
-//     return false;
-//   }
-// };
-// const makeMuscleRequest = async () => {
-//   try {
-//     const response = await axios.get(`${baseUrl}/muscle/` /*, config*/);
-//     if (response.status === 200) {
-//       // response - object, eg { status: 200, message: 'OK' }
-//       console.log("muscle success stuff");
-//       console.log(response.data.results);
-//       return response.data.results;
-//     }
-//     return false;
-//   } catch (err) {
-//     console.error(err);
-//     return false;
-//   }
-// };
-
-// const exercises = axios.get(`${baseUrl}/exerciseinfo/`).then(response => {
-//   console.log(response.data.results);
-//   return response.data.results;
-// });
-
-// const equipment = axios
-//   .get(`${baseUrl}/equipment/`)
-//   .then(response => {
-//     console.log(response.data.results);
-//     return response.data.results;
-//   })
-//   .catch(function(error) {
-//     console.log(error);
-//   });
-
-// const muscles = axios.get(`${baseUrl}/muscle/`).then(response => {
-//   console.log(response.data.results);
-//   return response.data.results;
-// });
 
 /*
 https://wger.de/api/v2/equipment/

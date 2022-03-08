@@ -98,3 +98,4 @@
 | 03/08/22          | 10:55     | return to getting a json response, taking a look at GraphQl                                                                                                     |
 | 03/08/22          | 12:25     | rereading https://www.learnhowtoprogram.com/intermediate-javascript/asynchrony-and-apis/parsing-json                                                            |
 | 03/08/22          | 14:10     | trying out Data fetching on mount https://blog.logrocket.com/data-fetching-react-native/                                                                        |
+| 03/08/22          | 15:07     | working on getting second api call in separate flat list                                                                                                        |

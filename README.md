@@ -17,7 +17,6 @@
 - _PropTypes_
 - [REST API Wger](https://wger.de/en/software/api)
 - _Postman_
-- _axios_
 - _native-base_
 
 ---
