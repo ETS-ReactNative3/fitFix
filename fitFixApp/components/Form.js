@@ -1,9 +1,16 @@
 import * as React from "react";
-import { StyleSheet, Button, View, Text } from "react-native";
+import { StyleSheet, Button, View, Text, FlatList, CheckBox } from "react-native";
 import { StatusBar } from "expo-status-bar";
 import { useForm } from "react-hook-form";
 
-export default function Form({ navigation }) {
+const renderItem = muscle => (
+  <>
+    <CheckBox value={isSelected} onValueChange={setSelection} style={styles.checkbox} />;<Text>{muscle.name}</Text>;
+  </>
+);
+
+export default function Form({ navigation, muscles /*equipment*/ }) {
+  const [isSelected, setSelection] = React.useState(false);
   const {
     register,
     handleSubmit,
@@ -12,19 +19,16 @@ export default function Form({ navigation }) {
   } = useForm();
   const onSubmit = data => console.log(data);
 
-  console.log(watch("example"));
-
   return (
     <View style={{ flex: 1, alignItems: "center", justifyContent: "center" }}>
       <Text>THIS IS THE FORM1 COMPONENT</Text>
       <StatusBar style="auto" />
       <Button title="Go to List" onPress={() => navigation.navigate("List")} />
       <form onSubmit={handleSubmit(onSubmit)}>
-        <input defaultValue="test" {...register("example")} />
-
+        <FlatList data={muscles} keyExtractor={muscle => muscle.id} renderItem={renderItem} />
+        {/* <input defaultValue="test" {...register("example")} />
         <input {...register("exampleRequired", { required: true })} />
-
-        {errors.exampleRequired && <span>This field is required</span>}
+        {errors.exampleRequired && <span>This field is required</span>} */}
 
         <input type="submit" />
       </form>

@@ -8,6 +8,8 @@
 
 `npm install react-hook-form`
 
+`npm install axios`
+
 ## **To Do List:**
 
 ### Planning

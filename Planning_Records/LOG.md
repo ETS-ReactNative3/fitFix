@@ -83,3 +83,6 @@
 | 03/07/22          | 13:49     | https://www.youtube.com/watch?v=0kL6nhutjQ8&ab_channel=MadeWithMatt                                                                                             |
 | 03/07/22          | 14:37     | adding fetch() to list component https://reactnative.dev/docs/network#using-fetch                                                                               |
 | 03/07/22          | 15:12     | **Break**                                                                                                                                                       |
+| 03/07/22          | 17:53     | Return to original, trouble shoot individual item click                                                                                                         |
+| 03/07/22          | 17:53     | Api call with axios                                                                                                                                             |
+| 03/07/22          | 17:53     | adding checkboxes to api forms                                                                                                                                  |
