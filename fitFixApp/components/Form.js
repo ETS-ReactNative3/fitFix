@@ -37,18 +37,20 @@ const DATA = [
   }
 ];
 
-const Item = ({ title }) => (
-  <View>
-    <Text>{title}</Text>
-  </View>
-);
-// const Item = ({ name }) => (
+// const Item = ({ title }) => (
 //   <View>
-//     <Text>{name}</Text>
+//     <Text>{title}</Text>
 //   </View>
 // );
+const Item = ({ name }) => (
+  <View>
+    <Text>{name}</Text>
+  </View>
+);
 
 export default function Form({ navigation /* muscles equipment*/ }) {
+  console.log(DATA);
+  console.log(makeMuscleRequest());
   // for the form and selection boxes
   const [isSelected, setSelection] = React.useState(false);
   const {
@@ -59,16 +61,16 @@ export default function Form({ navigation /* muscles equipment*/ }) {
   } = useForm();
   const onSubmit = data => console.log(data);
 
-  // render item used in the flatlist
-  const renderItem = ({ item }) => (
-    // <CheckBox value={isSelected} onValueChange={setSelection} style={styles.checkbox} />;
-    <Item title={item.title} />
-  );
-  // const renderItem = ({ item }) => {
-  //   console.log("renderItem function");
+  // // render item used in the flatlist
+  // const renderItem = ({ item }) => (
   //   // <CheckBox value={isSelected} onValueChange={setSelection} style={styles.checkbox} />;
-  //   <Item name={item.name} />;
-  // };
+  //   <Item title={item.title} />
+  // );
+  const renderItem = ({ item }) => {
+    console.log("renderItem function");
+    // <CheckBox value={isSelected} onValueChange={setSelection} style={styles.checkbox} />;
+    <Item name={item.name} />;
+  };
 
   return (
     <SafeAreaView style={{ flex: 1, alignItems: "center", justifyContent: "center" }}>
@@ -78,14 +80,14 @@ export default function Form({ navigation /* muscles equipment*/ }) {
       <View /*onSubmit={handleSubmit(onSubmit)}*/>
         <Text>THIS IS inside the form tags</Text>
         {console.log("This is the in form request:")}
-        <FlatList data={DATA} keyExtractor={item => item.id} renderItem={renderItem} />
-        {/* <FlatList data={makeMuscleRequest()} keyExtractor={item => item.id} renderItem={renderItem} /> */}
+        {/* {console.log(makeMuscleRequest())} */}
+        {/* <FlatList data={DATA} keyExtractor={item => item.id} renderItem={renderItem} /> */}
+        {/* {console.log()} */}
+        <FlatList data={makeMuscleRequest()} keyExtractor={item => item.id} renderItem={renderItem} />
         {/* <input defaultValue="test" {...register("example")} />
         <input {...register("exampleRequired", { required: true })} />
         {errors.exampleRequired && <span>This field is required</span>} */}
-
         {/* <input type="submit" /> */}
-        <FlatList data={DATA} renderItem={renderItem} keyExtractor={item => item.id} />
       </View>
     </SafeAreaView>
   );
