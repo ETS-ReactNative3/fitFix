@@ -91,3 +91,8 @@
 | .....             |
 | **Session Total** | **06:55** | **Running Total: 26:56**                                                                                                                                        |
 | .....             |
+| 03/08/22          | 8:31      | Session Start: Continue working on getting json response to list in form component                                                                              |
+| 03/08/22          | 9:10      | Reading Axios Docs                                                                                                                                              |
+| 03/08/22          | 9:34      | Successfully made request using async await, now working on passing it to child prop                                                                            |
+| 03/08/22          | 9:46      | **<---BREAK - DEI breakout sessions--->**                                                                                                                       |
+| 03/08/22          | 10:55     | return to getting a json response, taking a look at GraphQl                                                                                                     |

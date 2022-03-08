@@ -9,20 +9,71 @@ import Details from "./components/Details";
 import axios from "axios";
 const baseUrl = "https://wger.de/api/v2";
 
-const exercises = axios.get(`${baseUrl}/exerciseinfo/`).then(response => {
-  console.log(response.data.results);
-  return response.data.results;
-});
+const makeExerciseRequest = async () => {
+  try {
+    const response = await axios.get(`${baseUrl}/exerciseinfo/` /*, config*/);
+    if (response.status === 200) {
+      // response - object, eg { status: 200, message: 'OK' }
+      console.log("exercise success stuff");
+      console.log(response.data.results);
+      return response.data.results;
+    }
+    return false;
+  } catch (err) {
+    console.error(err);
+    return false;
+  }
+};
+// const makeEquipmentRequest = async () => {
+//   try {
+//     const response = await axios.get(`${baseUrl}/equipment/` /*, config*/);
+//     if (response.status === 200) {
+//       // response - object, eg { status: 200, message: 'OK' }
+//       console.log("equipment success stuff");
+//       console.log(response.data.results);
+//       return response.data.results;
+//     }
+//     return false;
+//   } catch (err) {
+//     console.error(err);
+//     return false;
+//   }
+// };
+// const makeMuscleRequest = async () => {
+//   try {
+//     const response = await axios.get(`${baseUrl}/muscle/` /*, config*/);
+//     if (response.status === 200) {
+//       // response - object, eg { status: 200, message: 'OK' }
+//       console.log("muscle success stuff");
+//       console.log(response.data.results);
+//       return response.data.results;
+//     }
+//     return false;
+//   } catch (err) {
+//     console.error(err);
+//     return false;
+//   }
+// };
 
-const equipment = axios.get(`${baseUrl}/equipment/`).then(response => {
-  console.log(response.data.results);
-  return response.data.results;
-});
+// const exercises = axios.get(`${baseUrl}/exerciseinfo/`).then(response => {
+//   console.log(response.data.results);
+//   return response.data.results;
+// });
 
-const muscles = axios.get(`${baseUrl}/muscle/`).then(response => {
-  console.log(response.data.results);
-  return response.data.results;
-});
+// const equipment = axios
+//   .get(`${baseUrl}/equipment/`)
+//   .then(response => {
+//     console.log(response.data.results);
+//     return response.data.results;
+//   })
+//   .catch(function(error) {
+//     console.log(error);
+//   });
+
+// const muscles = axios.get(`${baseUrl}/muscle/`).then(response => {
+//   console.log(response.data.results);
+//   return response.data.results;
+// });
 
 /*
 https://wger.de/api/v2/equipment/
@@ -33,14 +84,26 @@ const Stack = createNativeStackNavigator();
 
 function App({ navigation }) {
   return (
-    <NavigationContainer>
-      <Stack.Navigator>
-        <Stack.Screen name="Home" component={Home} options={{ title: "Welcome" }} />
-        <Stack.Screen name="Form" component={Form} options={{ title: "Form" }} muscles={muscles} equipment={equipment} />
-        <Stack.Screen name="List" component={List} options={{ title: "Exercise List" }} exercises={exercises} />
-        <Stack.Screen name="Details" component={Details} options={{ title: "Exercise Details" }} exercises={exercises} />
-      </Stack.Navigator>
-    </NavigationContainer>
+    <>
+      <NavigationContainer>
+        <Stack.Navigator>
+          <Stack.Screen name="Home" component={Home} options={{ title: "Welcome" }} />
+          <Stack.Screen
+            name="Form"
+            component={Form}
+            options={{ title: "Form" }}
+            /* muscles={makeMuscleRequest()}*/
+            /*equipment={makeEquipmentRequest()}*/
+          />
+          <Stack.Screen name="List" component={List} options={{ title: "Exercise List" }} /*exercises={exercises}*/ />
+          <Stack.Screen name="Details" component={Details} options={{ title: "Exercise Details" }} /*exercises={exercises}*/ />
+        </Stack.Navigator>
+      </NavigationContainer>
+      <View>
+        <Text>{console.log(makeExerciseRequest())}</Text>
+        {/* <Text>{console.log(makeEquipmentRequest())}</Text> */}
+      </View>
+    </>
   );
 }
 
