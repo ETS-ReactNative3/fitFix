@@ -51,7 +51,7 @@ export default function Form({ navigation }) {
       <NativeBaseProvider>
         <Text>THIS IS THE FORM1 COMPONENT</Text>
         <StatusBar style="auto" />
-        {/* <Button title="Go to List" onPress={() => navigation.navigate("List")} /> */}
+        <Button title="Go to List" onPress={() => navigation.navigate("List")} />
         <View>
           <Center flex={1}>
             <Box> Fetch Muscle API</Box>
