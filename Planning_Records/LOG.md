@@ -96,3 +96,4 @@
 | 03/08/22          | 9:34      | Successfully made request using async await, now working on passing it to child prop                                                                            |
 | 03/08/22          | 9:46      | **<---BREAK - DEI breakout sessions--->**                                                                                                                       |
 | 03/08/22          | 10:55     | return to getting a json response, taking a look at GraphQl                                                                                                     |
+| 03/08/22          | 12:25     | rereading https://www.learnhowtoprogram.com/intermediate-javascript/asynchrony-and-apis/parsing-json                                                            |
