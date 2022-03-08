@@ -84,6 +84,7 @@ export default function Form({ navigation /* muscles equipment*/ }) {
         {/* <FlatList data={DATA} keyExtractor={item => item.id} renderItem={renderItem} /> */}
         {/* {console.log()} */}
         <FlatList data={makeMuscleRequest()} keyExtractor={item => item.id} renderItem={renderItem} />
+        {console.log("flatList has run")}
         {/* <input defaultValue="test" {...register("example")} />
         <input {...register("exampleRequired", { required: true })} />
         {errors.exampleRequired && <span>This field is required</span>} */}
