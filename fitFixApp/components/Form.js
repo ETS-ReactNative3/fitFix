@@ -56,8 +56,12 @@ export default function Form({ navigation }) {
 
   const fetchData = async () => {
     const resp = await fetch(`${baseUrl}/muscle/`);
-    const data = await resp.results.json();
-    setData(data);
+    const data = await resp.json();
+    console.log("---------");
+    console.log(data);
+    console.log(data.results);
+    console.log("---------");
+    setData(data.results);
     setLoading(false);
   };
 
@@ -89,7 +93,6 @@ export default function Form({ navigation }) {
         <Center flex={1}>
           <Box> Fetch API</Box>
           {loading && <Box>Loading..</Box>}
-          {console.log("data in fetch api box" + { data })}
           {data && <FlatList data={data} renderItem={renderItem} keyExtractor={item => item.id.toString()} />}
         </Center>
       </View>
