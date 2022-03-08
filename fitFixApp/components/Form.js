@@ -6,8 +6,10 @@ import { useState, useEffect } from "react";
 const baseUrl = "https://wger.de/api/v2";
 
 export default function Form({ navigation }) {
-  const [data, setData] = useState([]);
-  const [loading, setLoading] = useState(true);
+  const [muscleData, setMuscleData] = useState([]);
+  const [equipmentData, setEquipmentData] = useState([]);
+  const [muscleLoading, setMuscleLoading] = useState(true);
+  const [equipmentLoading, setEquipmentLoading] = useState(true);
 
   const fetchMuscleData = async () => {
     const resp = await fetch(`${baseUrl}/muscle/`);
@@ -16,8 +18,8 @@ export default function Form({ navigation }) {
     console.log(data);
     console.log(data.results);
     console.log("---------");
-    setData(data.results);
-    setLoading(false);
+    setMuscleData(data.results);
+    setMuscleLoading(false);
   };
   const fetchEquipmentData = async () => {
     const resp = await fetch(`${baseUrl}/equipment/`);
@@ -26,8 +28,8 @@ export default function Form({ navigation }) {
     console.log(data);
     console.log(data.results);
     console.log("---------");
-    setData(data.results);
-    setLoading(false);
+    setEquipmentData(data.results);
+    setEquipmentLoading(false);
   };
 
   const renderMuscleItem = ({ item }) => {
@@ -53,15 +55,19 @@ export default function Form({ navigation }) {
         <View>
           <Center flex={1}>
             <Box> Fetch Muscle API</Box>
-            {loading && <Box>Loading..</Box>}
-            {data && <FlatList data={data} renderItem={renderMuscleItem} keyExtractor={item => item.id.toString()} />}
+            {muscleLoading && <Box>Loading..</Box>}
+            {muscleData && (
+              <FlatList data={muscleData} renderItem={renderMuscleItem} keyExtractor={item => item.id.toString()} />
+            )}
           </Center>
         </View>{" "}
         <View>
           <Center flex={1}>
             <Box> Fetch Equipment API</Box>
-            {loading && <Box>Loading..</Box>}
-            {data && <FlatList data={data} renderItem={renderEquipmentItem} keyExtractor={item => item.id.toString()} />}
+            {equipmentLoading && <Box>Loading..</Box>}
+            {equipmentData && (
+              <FlatList data={equipmentData} renderItem={renderEquipmentItem} keyExtractor={item => item.id.toString()} />
+            )}
           </Center>
         </View>{" "}
       </NativeBaseProvider>
