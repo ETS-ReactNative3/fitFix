@@ -54,13 +54,13 @@ export default function Form({ navigation }) {
 
       <View flex={1}>
         <View>
-          <View> Fetch Muscle API</View>
-          {muscleLoading && <View>Loading..</View>}
+          <Text> Fetch Muscle API</Text>
+          {muscleLoading && <Text>Loading..</Text>}
           {muscleData && <FlatList data={muscleData} renderItem={renderMuscleItem} keyExtractor={item => item.id.toString()} />}
         </View>
         <View>
-          <View> Fetch Equipment API</View>
-          {equipmentLoading && <View>Loading..</View>}
+          <Text> Fetch Equipment API</Text>
+          {equipmentLoading && <Text>Loading..</Text>}
           {equipmentData && (
             <FlatList data={equipmentData} renderItem={renderEquipmentItem} keyExtractor={item => item.id.toString()} />
           )}

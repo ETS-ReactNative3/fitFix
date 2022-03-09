@@ -32,15 +32,11 @@ export default function List({ navigation }) {
       <Text>THIS IS THE List COMPONENT</Text>
       <StatusBar style="auto" />
 
-      <View>
-        <View flex={1}>
-          <View> Fetch Exercise API</View>
-          {exerciseLoading && <View>Loading..</View>}
-          {exerciseData && (
-            <FlatList data={exerciseData} renderItem={renderExerciseItem} keyExtractor={item => item.id.toString()} />
-          )}
-        </View>
-      </View>
+      <Text> Fetch Exercise API</Text>
+      {exerciseLoading && <Text>Loading..</Text>}
+      {exerciseData && (
+        <FlatList data={exerciseData} renderItem={renderExerciseItem} keyExtractor={item => item.id.toString()} />
+      )}
     </View>
   );
 }
