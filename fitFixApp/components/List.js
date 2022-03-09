@@ -96,13 +96,13 @@ export default function List({ navigation }) {
 const styles = StyleSheet.create({
   itemText: {
     color: "black",
-    fontWeight: "600",
+    fontWeight: "800",
     textAlign: "center"
-    // textTransform: "uppercase"
+    // textTransformations: "uppercase"
   },
   modalBody: {
     color: "black",
-    fontWeight: "600",
+    fontWeight: "400",
     textAlign: "center"
     // textTransform: "uppercase"
   },

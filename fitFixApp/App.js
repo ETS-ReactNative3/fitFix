@@ -78,6 +78,7 @@ function App({ navigation }) {
               component={Form}
               options={{ title: "Form" }}
               initialParams={{
+                navigation: { navigation },
                 equipmentData: { equipmentData },
                 muscleData: { muscleData }
                 // muscleLoading: { muscleLoading },
