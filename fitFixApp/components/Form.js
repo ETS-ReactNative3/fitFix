@@ -48,23 +48,22 @@ export default function Form({ navigation }) {
 
   return (
     <SafeAreaView style={{ flex: 1, alignItems: "center", justifyContent: "center" }}>
-      <Text>THIS IS THE FORM1 COMPONENT</Text>
-      <StatusBar style="auto" />
-      <Button title="Go to List" onPress={() => navigation.navigate("List")} />
-
-      <View flex={1}>
-        <View>
-          <Text> Fetch Muscle API</Text>
-          {muscleLoading && <Text>Loading..</Text>}
-          {muscleData && <FlatList data={muscleData} renderItem={renderMuscleItem} keyExtractor={item => item.id.toString()} />}
-        </View>
-        <View>
-          <Text> Fetch Equipment API</Text>
-          {equipmentLoading && <Text>Loading..</Text>}
-          {equipmentData && (
-            <FlatList data={equipmentData} renderItem={renderEquipmentItem} keyExtractor={item => item.id.toString()} />
-          )}
-        </View>
+      <View style={{ flex: 0.5, backgroundColor: "#C6E2FF" }}>
+        <Text>THIS IS THE FORM1 COMPONENT</Text>
+        <StatusBar style="auto" />
+        <Button title="Go to List" onPress={() => navigation.navigate("List")} />
+      </View>
+      <View style={{ flex: 2, backgroundColor: "#C6E2FF" }}>
+        <Text> Fetch Muscle API</Text>
+        {muscleLoading && <Text>Loading..</Text>}
+        {muscleData && <FlatList data={muscleData} renderItem={renderMuscleItem} keyExtractor={item => item.id.toString()} />}
+      </View>
+      <View style={{ flex: 2, backgroundColor: "blue" }}>
+        <Text> Fetch Equipment API</Text>
+        {equipmentLoading && <Text>Loading..</Text>}
+        {equipmentData && (
+          <FlatList data={equipmentData} renderItem={renderEquipmentItem} keyExtractor={item => item.id.toString()} />
+        )}
       </View>
     </SafeAreaView>
   );
