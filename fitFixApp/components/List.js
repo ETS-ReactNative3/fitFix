@@ -11,22 +11,20 @@ export default function List({ navigation }) {
   const [exerciseLoading, setExerciseLoading] = useState(true);
   const [modalOpen, setModalOpen] = useState(false);
   const [modalData, setModalData] = useState([exerciseData]);
-  const Item = ({ item, onPress, backgroundColor, textColor, deleteItem, showItem, setModalOpen }) => (
-    <TouchableOpacity onPress={onPress} style={[styles.item, backgroundColor]}>
+  const itemOnPress = id => {
+    setModalOpen(true);
+    showItem(id);
+  };
+  const Item = ({ item, backgroundColor, textColor, deleteItem }) => (
+    <TouchableOpacity
+      onPress={() => {
+        itemOnPress(item.id);
+      }}
+      style={[styles.item, backgroundColor]}
+    >
       <View style={styles.listItem}>
         <Text style={[styles.title, textColor]}>{item.name}</Text>
-        {/* <View style={{ flexDirection: "row" }}> */}
-        <Icon
-          name="ellipsis-h"
-          size={20}
-          color="#000000"
-          onPress={() => {
-            setModalOpen(true);
-            showItem(item.id);
-          }}
-        />
-        <Icon /*style={{ marginLeft: 25 }} */ name="remove" size={20} color="#000000" onPress={() => deleteItem(item.id)} />
-        {/* </View> */}
+        <Icon name="remove" size={20} color="#000000" onPress={() => deleteItem(item.id)} />
       </View>
     </TouchableOpacity>
   );
