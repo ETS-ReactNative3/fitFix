@@ -1,42 +1,44 @@
 import * as React from "react";
 import { StyleSheet, Button, View, CheckBox, SafeAreaView, FlatList, Text } from "react-native";
 import { StatusBar } from "expo-status-bar";
-import { useState, useEffect } from "react";
-const baseUrl = "https://wger.de/api/v2";
-import { v4 as uuidv4 } from "uuid";
+// import { useState, useEffect } from "react";
+// const baseUrl = "https://wger.de/api/v2";
+// import { v4 as uuidv4 } from "uuid";
 
 export default function Form(props) {
   const {
-    navigation,
+    // navigation,
     equipmentData,
-    muscleData,
-    muscleLoading,
-    equipmentLoading,
-    setEquipmentData,
-    setMuscleData
+    muscleData
+    // muscleLoading,
+    // equipmentLoading
+    // setEquipmentData,
+    // setMuscleData
   } = props.route.params;
+  // const [newEquipmentData, setNewEquipmentData] = useState([equipmentData]);
 
-  setEquipmentData([...equipmentData]);
-  setMuscleData([...muscleData]);
+  // setEquipmentData([equipmentData]);
+  // setMuscleData([muscleData]);
 
-  const renderMuscleItem = ({ muscle }) => {
+  const renderMuscleItem = ({ item }) => {
     console.log("renderMuscleItem reached");
-    return <Text>{muscle.name}</Text>;
+    return <Text>{item.name}</Text>;
   };
 
-  const renderEquipmentItem = ({ equipment }) => {
-    console.log("renderEquipmentItem reached");
-    return <Text>{equipment.name}</Text>;
-  };
-
+  // const renderEquipmentItem = ({ item }) => {
+  //   console.log("renderEquipmentItem reached");
+  //   return <Text>{item.name}</Text>;
+  // };
+  console.log("muscle in form");
+  console.log(muscleData);
+  console.log("equipment in form");
+  console.log(equipmentData);
   // console.log("not destructured:");
   // console.log(props.route.params.muscle);
   // console.log("equipment");
   // console.log(equipment);
-  console.log("muscle in form 1");
-  console.log(muscleData);
-  console.log("equipment in form 1");
-  console.log(equipmentData);
+  // console.log("new equipment in form");
+  // console.log(newEquipmentData);
   // console.log(muscleData.name);
   // console.log("muscle in form 2");
   // console.log(...muscleData);
@@ -57,7 +59,7 @@ export default function Form(props) {
         <Text> Fetch Muscle API</Text>
         {/* {muscleLoading && <Text>Loading..</Text>} */}
         {/* {muscle && <FlatList data={muscle} renderItem={renderMuscleItem} keyExtractor={muscle => muscle.id.toString()} />} */}
-        <FlatList data={muscleData} renderItem={renderMuscleItem()} keyExtractor={muscle => muscle.id.toString()} />
+        {/* <FlatList data={muscleData} renderItem={renderMuscleItem()} keyExtractor={muscle => muscle.id.toString()} /> */}
       </View>
       <View style={{ flex: 2, backgroundColor: "blue" }}>
         <Text> Fetch Equipment API</Text>
@@ -65,7 +67,12 @@ export default function Form(props) {
         {/* {equipment && (
           <FlatList data={equipment} renderItem={renderEquipmentItem} keyExtractor={equipment => equipment.id.toString()} />
         )} */}
-        <FlatList data={equipmentData} renderItem={renderEquipmentItem()} keyExtractor={equipment => equipment.id.toString()} />
+        {/* <FlatList data={equipmentData} renderItem={renderEquipmentItem()} keyExtractor={equipment => equipment.id.toString()} /> */}
+        <FlatList
+          data={equipmentData}
+          keyExtractor={equipment => equipment.id.toString()}
+          renderItem={({ item }) => <Text>{item.name}</Text>}
+        />
       </View>
     </SafeAreaView>
   );

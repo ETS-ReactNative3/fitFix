@@ -119,3 +119,5 @@
 | 03/09/22          | 8:22      | Session Start: Continue working on detail modal toggle                                                                                                          |
 | 03/09/22          | 9:39      | Start on building checkboxes, form, submit on form page                                                                                                         |
 | 03/09/22          | 11:21     | working on passing data as props in form component                                                                                                              |
+| 03/09/22          | 12:30     | **<---BREAK--->**                                                                                                                                               |
+| 03/09/22          | 12:52     | Return to passing data as props in form to get lists to render                                                                                                  |

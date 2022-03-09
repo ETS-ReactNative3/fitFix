@@ -54,8 +54,8 @@ function App({ navigation }) {
   //     </NativeBaseProvider>
   //   );
   // } else {
-  console.log("muscleData in App.js");
-  console.log(muscleData);
+  // console.log("muscleData in App.js");
+  // console.log(muscleData);
   return (
     <NativeBaseProvider>
       <>
@@ -68,11 +68,11 @@ function App({ navigation }) {
               options={{ title: "Form" }}
               initialParams={{
                 equipmentData: { equipmentData },
-                muscleData: { muscleData },
-                muscleLoading: { muscleLoading },
-                equipmentLoading: { equipmentLoading },
-                setEquipmentData: { setEquipmentData },
-                setMuscleData: { setMuscleData }
+                muscleData: { muscleData }
+                // muscleLoading: { muscleLoading },
+                // equipmentLoading: { equipmentLoading },
+                // setEquipmentData: { setEquipmentData },
+                // setMuscleData: { setMuscleData }
               }}
               // setMuscleLoading={setMuscleLoading}
               // setEquipmentLoading={setEquipmentLoading}
