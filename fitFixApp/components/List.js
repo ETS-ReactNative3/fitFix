@@ -11,23 +11,37 @@ export default function List({ navigation }) {
   const [exerciseLoading, setExerciseLoading] = useState(true);
   const [modalOpen, setModalOpen] = useState(false);
   const [modalData, setModalData] = useState([exerciseData]);
-  const itemOnPress = id => {
-    setModalOpen(true);
-    showItem(id);
-  };
+  // const itemOnPress = () => {
+  //   setModalOpen(true);
+  // };
   const Item = ({ item, backgroundColor, textColor, deleteItem }) => (
     <TouchableOpacity
       onPress={() => {
-        itemOnPress(item.id);
+        setModalOpen(true);
       }}
       style={[styles.item, backgroundColor]}
     >
       <View style={styles.listItem}>
         <Text style={[styles.title, textColor]}>{item.name}</Text>
         <Icon name="remove" size={20} color="#000000" onPress={() => deleteItem(item.id)} />
+        <Modal visible={modalOpen} animationType="fade">
+          <View style={styles.modalContent}>
+            <Icon name="remove" size={40} color="#000000" onPress={() => setModalOpen(false)} style={styles.modalToggle} />
+            <Text>{item.name}</Text>
+            <Text>{item.description}</Text>
+          </View>
+        </Modal>
       </View>
     </TouchableOpacity>
   );
+  // const renderExerciseDetails = ({ item }) => {
+  //   return (
+  //     <View>
+  //       <Text>{item.name}</Text>
+  //       <Text>{item.description}</Text>
+  //     </View>
+  //   );
+  // };
   const fetchExerciseData = async () => {
     const resp = await fetch(`${baseUrl}/exercise/`);
     const data = await resp.json();
@@ -56,7 +70,7 @@ export default function List({ navigation }) {
       return prevItems.filter(item => item.id != id);
     });
   };
-  const showItem = id => {
+  const indItemData = id => {
     setModalData(exerciseData => {
       return exerciseData.filter(item => item.id === id);
     });
@@ -65,13 +79,6 @@ export default function List({ navigation }) {
     <SafeAreaView style={{ flex: 1, alignItems: "center", justifyContent: "center" }}>
       <Text>THIS IS THE List COMPONENT</Text>
       <StatusBar style="auto" />
-      <Modal visible={modalOpen} animationType="fade">
-        <View style={styles.modalContent}>
-          <Text>This is where exercise details will go</Text>
-          <Text>This is where exercise details will go</Text>
-          <Icon name="remove" size={40} color="#000000" onPress={() => setModalOpen(false)} style={styles.modalToggle} />
-        </View>
-      </Modal>
       <Icon name="ellipsis-h" size={20} color="#000000" onPress={() => setModalOpen(true)} style={styles.modalToggle} />
       {exerciseLoading && <Text>Loading..</Text>}
       {exerciseData && (
