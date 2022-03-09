@@ -5,7 +5,7 @@ import { StatusBar } from "expo-status-bar";
 // const baseUrl = "https://wger.de/api/v2";
 // import { v4 as uuidv4 } from "uuid";
 
-export default function Form(props) {
+export default function Form({ navigation }, props) {
   const {
     // navigation,
     equipmentData,

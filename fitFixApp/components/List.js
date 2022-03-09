@@ -22,13 +22,13 @@ export default function List({ navigation }) {
       style={[styles.item, backgroundColor]}
     >
       <View style={styles.listItem}>
-        <Text style={[styles.title, textColor]}>{item.name}</Text>
+        <Text style={styles.itemText}>{item.name}</Text>
         <Icon name="remove" size={20} color="#000000" onPress={() => deleteItem(item.id)} />
         <Modal visible={modalOpen} animationType="fade">
           <View style={styles.modalContent}>
             <Icon name="remove" size={40} color="#000000" onPress={() => setModalOpen(false)} style={styles.modalToggle} />
-            <Text style={{ fontSize: 25, color: "#f5646b" }}>{item.name}</Text>
-            <Text>{item.description}</Text>
+            <Text style={styles.itemText}>{item.name}</Text>
+            <Text style={styles.modalBody}>{item.description}</Text>
           </View>
         </Modal>
       </View>
@@ -94,6 +94,18 @@ export default function List({ navigation }) {
 }
 
 const styles = StyleSheet.create({
+  itemText: {
+    color: "black",
+    fontWeight: "600",
+    textAlign: "center"
+    // textTransform: "uppercase"
+  },
+  modalBody: {
+    color: "black",
+    fontWeight: "600",
+    textAlign: "center"
+    // textTransform: "uppercase"
+  },
   listItem: {
     flexDirection: "row",
     justifyContent: "space-between",
@@ -106,7 +118,8 @@ const styles = StyleSheet.create({
   item: {
     padding: 20,
     marginVertical: 8,
-    marginHorizontal: 16
+    marginHorizontal: 16,
+    borderRadius: 10
   },
   title: {
     fontSize: 12
@@ -124,9 +137,9 @@ const styles = StyleSheet.create({
     // borderColor: "#f2f2f2",
     // backgroundColor: "#fe8f71",
     padding: 10,
-    borderColor: "#000000",
-    borderWidth: 1,
-    borderRadius: 20,
+    // borderColor: "#000000",
+    // borderWidth: 1,
+    // borderRadius: 20,
     alignSelf: "center"
   }
 });

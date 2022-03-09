@@ -1,5 +1,5 @@
 import * as React from "react";
-import { NavigationContainer } from "@react-navigation/native";
+import { NavigationContainer, DefaultTheme } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import Home from "./components/Home";
 import Form from "./components/Form";
@@ -56,12 +56,23 @@ function App({ navigation }) {
   // } else {
   // console.log("muscleData in App.js");
   // console.log(muscleData);
+  const MyTheme = {
+    dark: false,
+    colors: {
+      primary: "#000000",
+      background: "#000000",
+      card: "rgb(255, 255, 255)",
+      text: "rgb(28, 28, 30)",
+      border: "rgb(199, 199, 204)",
+      notification: "rgb(255, 69, 58)"
+    }
+  };
   return (
     <NativeBaseProvider>
       <>
-        <NavigationContainer>
+        <NavigationContainer theme={MyTheme}>
           <Stack.Navigator>
-            <Stack.Screen name="Home" component={Home} options={{ title: "Welcome" }} />
+            <Stack.Screen name="Home" component={Home} options={{ title: "fitFix" }} />
             <Stack.Screen
               name="Form"
               component={Form}
