@@ -7,51 +7,10 @@ import Form from "./components/Form";
 import List from "./components/List";
 import Details from "./components/Details";
 import axios from "axios";
-import { Box, FlatList, Center, NativeBaseProvider, Text } from "native-base";
-import { useState, useEffect } from "react";
-const baseUrl = "https://wger.de/api/v2";
 
-// const makeExerciseRequest = async () => {
-//   try {
-//     const response = await axios.get(`${baseUrl}/exerciseinfo/` /*, config*/);
-//     if (response.status === 200) {
-//       // response - object, eg { status: 200, message: 'OK' }
-//       console.log("exercise success stuff");
-//       console.log(response.data.results);
-//       return response.data.results;
-//     }
-//     return false;
-//   } catch (err) {
-//     console.error(err);
-//     return false;
-//   }
-// };
-
-/*
-https://wger.de/api/v2/equipment/
-https://wger.de/api/v2/muscle/`
-https://wger.de/api/v2/exerciseinfo/
- */
 const Stack = createNativeStackNavigator();
 
 function App({ navigation }) {
-  const [exerciseData, setExerciseData] = useState([]);
-  const [exerciseLoading, setExerciseLoading] = useState(true);
-  const fetchExerciseData = async () => {
-    const resp = await fetch(`${baseUrl}/exercise/`);
-    const data = await resp.json();
-    console.log("---------");
-    console.log(data);
-    console.log(data.results);
-    console.log("---------");
-    setExerciseData(data.results);
-    setExerciseLoading(false);
-  };
-
-  useEffect(() => {
-    fetchExerciseData();
-  }, []);
-
   return (
     <>
       <NavigationContainer>
@@ -64,7 +23,7 @@ function App({ navigation }) {
             /* muscles={makeMuscleRequest()}*/
             /*equipment={makeEquipmentRequest()}*/
           />
-          <Stack.Screen name="List" component={List} options={{ title: "Exercise List" }} exerciseData={exerciseData} />
+          <Stack.Screen name="List" component={List} options={{ title: "Exercise List" }} />
           <Stack.Screen name="Details" component={Details} options={{ title: "Exercise Details" }} /*exercises={exercises}*/ />
         </Stack.Navigator>
       </NavigationContainer>

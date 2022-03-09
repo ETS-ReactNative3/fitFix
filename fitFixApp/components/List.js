@@ -1,13 +1,24 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { StyleSheet, Button, View, Modal, TouchableOpacity } from "react-native";
 import { Box, FlatList, Center, Text } from "native-base";
 import { StatusBar } from "expo-status-bar";
 import ListItem from "./ListItem";
 import { uuid } from "uuidv4";
+const baseUrl = "https://wger.de/api/v2";
 
-export default function List({ navigation, exerciseData }) {
-  // const [exerciseData /*, setExerciseData*/] = useState([]);
+export default function List({ navigation }) {
+  const [exerciseData, setExerciseData] = useState([]);
   const [exerciseLoading, setExerciseLoading] = useState(true);
+  const fetchExerciseData = async () => {
+    const resp = await fetch(`${baseUrl}/exercise/`);
+    const data = await resp.json();
+    console.log("---------");
+    console.log(data);
+    console.log(data.results);
+    console.log("---------");
+    setExerciseData(data.results);
+    setExerciseLoading(false);
+  };
   // const [items, setItems] = useState([
   //   {
   //     id: 345,
@@ -35,26 +46,18 @@ export default function List({ navigation, exerciseData }) {
   //   });
   // };
 
-  console.log("cl of exercise data");
-  console.log(exerciseData);
-
-  const renderEquipmentItem = ({ item }) => {
+  const renderExerciseItem = ({ item }) => {
     return <Text>{item.name}</Text>;
   };
+  useEffect(() => {
+    fetchExerciseData();
+  }, []);
 
   return (
     <View style={{ flex: 1, alignItems: "center", justifyContent: "center" }}>
       <Text>THIS IS THE List COMPONENT</Text>
       <StatusBar style="auto" />
-      {/* <FlatList
-        data={items}
-        renderItem={({ item }) => (
-          <TouchableOpacity>
-            <ListItem item={item} deleteItem={deleteItem} />
-            <Button title="See Exercise Details" onPress={() => navigation.navigate("Details")} />
-          </TouchableOpacity>
-        )}
-      /> */}
+
       <View>
         <Center flex={1}>
           <Box> Fetch Exercise API</Box>
