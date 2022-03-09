@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { StyleSheet, Button, View, Modal, TouchableOpacity } from "react-native";
-import { Box, FlatList, Center, Text } from "native-base";
+import { StyleSheet, Button, View, Modal, TouchableOpacity, FlatList, Text } from "react-native";
 import { StatusBar } from "expo-status-bar";
 // import ListItem from "./ListItem";
 // import { uuid } from "uuidv4";
@@ -34,13 +33,13 @@ export default function List({ navigation }) {
       <StatusBar style="auto" />
 
       <View>
-        <Center flex={1}>
-          <Box> Fetch Exercise API</Box>
-          {exerciseLoading && <Box>Loading..</Box>}
+        <View flex={1}>
+          <View> Fetch Exercise API</View>
+          {exerciseLoading && <View>Loading..</View>}
           {exerciseData && (
             <FlatList data={exerciseData} renderItem={renderExerciseItem} keyExtractor={item => item.id.toString()} />
           )}
-        </Center>
+        </View>
       </View>
     </View>
   );

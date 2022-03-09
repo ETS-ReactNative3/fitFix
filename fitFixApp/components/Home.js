@@ -10,6 +10,7 @@ export default function Home({ navigation }) {
       <Image style={styles.image} source={require("../assets/exercise_equipment.jpg")} />
       <StatusBar style="auto" />
       <Button title="Let's Get Started" onPress={() => navigation.navigate("Form")} />
+      <Button title="View List" onPress={() => navigation.navigate("List")} />
     </View>
   );
 }
