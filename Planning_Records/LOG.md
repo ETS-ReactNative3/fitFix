@@ -107,3 +107,5 @@
 | 03/08/22          | 18:22     | Reading nativeBase docs https://docs.nativebase.io/getting-started                                                                                              |
 | 03/08/22          | 18:41     | Getting iphone simulator to run                                                                                                                                 |
 | 03/08/22          | 19:06     | Work on changing flat list in List to selectable                                                                                                                |
+| 03/08/22          | 19:06     | Adding ability to delete, watching https://www.youtube.com/watch?v=k-Ra0tdCEOc&ab_channel=PradipDebnath                                                         |
+| 03/08/22          | 20:15     | Found the video I used before: https://www.youtube.com/watch?v=Hf4MJH0jDb4&ab_channel=TraversyMedia                                                             |

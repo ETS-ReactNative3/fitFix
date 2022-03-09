@@ -18,6 +18,7 @@
 - [REST API Wger](https://wger.de/en/software/api)
 - _Postman_
 - _native-base_
+- _react-native-vector-icons_
 
 ---
 

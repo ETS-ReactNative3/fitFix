@@ -2,18 +2,28 @@ import React, { useState, useEffect } from "react";
 import { StyleSheet, Button, View, Modal, TouchableOpacity, FlatList, Text, SafeAreaView } from "react-native";
 import { StatusBar } from "expo-status-bar";
 // import ListItem from "./ListItem";
-// import { uuid } from "uuidv4";
 const baseUrl = "https://wger.de/api/v2";
 import { v4 as uuidv4 } from "uuid";
+import Icon from "react-native-vector-icons/FontAwesome";
 
 const Item = ({ item, onPress, backgroundColor, textColor }) => (
   <TouchableOpacity onPress={onPress} style={[styles.item, backgroundColor]}>
-    <Text style={[styles.title, textColor]}>{item.name}</Text>
+    <View style={styles.listItem}>
+      <Text style={[styles.title, textColor]}>{item.name}</Text>
+      <Icon name="remove" size={20} color="000" />
+    </View>
   </TouchableOpacity>
 );
 {
   /* <Text>{item.name}</Text>; */
 }
+
+const deleteItem = id => {
+  setItems(prevItems => {
+    alert("delete: " + id);
+    return prevItems.filter(item => item.id != id);
+  });
+};
 
 export default function List({ navigation }) {
   const [selectedId, setSelectedId] = useState(null);
@@ -30,10 +40,16 @@ export default function List({ navigation }) {
     setExerciseLoading(false);
   };
   const renderExerciseItem = ({ item }) => {
-    const backgroundColor = item.id === selectedId ? "#6e3b6e" : "#f9c2ff";
+    const backgroundColor = item.id === selectedId ? "#fd90a3" : "#cffc5b";
     const color = item.id === selectedId ? "white" : "black";
     return (
-      <Item item={item} onPress={() => setSelectedId(item.id)} backgroundColor={{ backgroundColor }} textColor={{ color }} />
+      <Item
+        item={item}
+        onPress={() => setSelectedId(item.id)}
+        backgroundColor={{ backgroundColor }}
+        textColor={{ color }}
+        deleteItem={deleteItem}
+      />
     );
   };
   useEffect(() => {
@@ -59,6 +75,11 @@ export default function List({ navigation }) {
 }
 
 const styles = StyleSheet.create({
+  listItem: {
+    flexDirection: "row",
+    justifyContent: "space-between",
+    alignItems: "center"
+  },
   container: {
     flex: 1,
     marginTop: StatusBar.currentHeight || 0
@@ -69,7 +90,7 @@ const styles = StyleSheet.create({
     marginHorizontal: 16
   },
   title: {
-    fontSize: 32
+    fontSize: 12
   }
 });
 
@@ -129,12 +150,12 @@ const styles = StyleSheet.create({
 //     );
 //   };
 
-//   const deleteItem = id => {
-//     setItems(prevItems => {
-//       alert("delete: " + id);
-//       return prevItems.filter(item => item.id != id);
-//     });
-//   };
+// const deleteItem = id => {
+//   setItems(prevItems => {
+//     alert("delete: " + id);
+//     return prevItems.filter(item => item.id != id);
+//   });
+// };
 
 //   return (
 //     <SafeAreaView style={{ flex: 1, alignItems: "center", justifyContent: "center" }}>
