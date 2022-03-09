@@ -23,9 +23,13 @@
 ### Construction
 
 - [x] Organize components according to hierarchy
-- [ ] Build a static version in React Native
-- [ ] Identify the minimal representation of UI state / think about state
-- [ ] Incorporate api (fetch())
+- [x] Build a static version in React Native
+- [x] Identify the minimal representation of UI state / think about state
+- [x] Incorporate api (fetch())
+- [ ] Get detail modal working
+- [ ] get a form built on form page
+- [ ] filter list by form inputs
+- [ ] styling
 
 ---
 

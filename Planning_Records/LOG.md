@@ -112,3 +112,7 @@
 | 03/08/22          | 20:44     | X has been added, now adding delete functionality                                                                                                               |
 | 03/08/22          | 20:56     | researching modal                                                                                                                                               |
 | 03/08/22          | 22:03     | continuing modal detail: currently working on toggle, no id props are getting passed yet                                                                        |
+| 03/08/22          | 22:36     | _End work session - WIP: WIP: creating all the necessary functions to show exercise details in modal when clicked_                                              |
+| .....             |
+| **Session Total** | **12:17** | **Running Total: 39:13**                                                                                                                                        |
+| .....             |
