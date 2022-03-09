@@ -1,12 +1,22 @@
 import React, { useState, useEffect } from "react";
-import { StyleSheet, Button, View, Modal, TouchableOpacity, FlatList, Text } from "react-native";
+import { StyleSheet, Button, View, Modal, TouchableOpacity, FlatList, Text, SafeAreaView } from "react-native";
 import { StatusBar } from "expo-status-bar";
 // import ListItem from "./ListItem";
 // import { uuid } from "uuidv4";
 const baseUrl = "https://wger.de/api/v2";
 import { v4 as uuidv4 } from "uuid";
 
+const Item = ({ item, onPress, backgroundColor, textColor }) => (
+  <TouchableOpacity onPress={onPress} style={[styles.item, backgroundColor]}>
+    <Text style={[styles.title, textColor]}>{item.name}</Text>
+  </TouchableOpacity>
+);
+{
+  /* <Text>{item.name}</Text>; */
+}
+
 export default function List({ navigation }) {
+  const [selectedId, setSelectedId] = useState(null);
   const [exerciseData, setExerciseData] = useState([]);
   const [exerciseLoading, setExerciseLoading] = useState(true);
   const fetchExerciseData = async () => {
@@ -19,27 +29,49 @@ export default function List({ navigation }) {
     setExerciseData(data.results);
     setExerciseLoading(false);
   };
-
   const renderExerciseItem = ({ item }) => {
-    return <Text>{item.name}</Text>;
+    const backgroundColor = item.id === selectedId ? "#6e3b6e" : "#f9c2ff";
+    const color = item.id === selectedId ? "white" : "black";
+    return (
+      <Item item={item} onPress={() => setSelectedId(item.id)} backgroundColor={{ backgroundColor }} textColor={{ color }} />
+    );
   };
   useEffect(() => {
     fetchExerciseData();
   }, []);
-
   return (
-    <View style={{ flex: 1, alignItems: "center", justifyContent: "center" }}>
+    <SafeAreaView style={{ flex: 1, alignItems: "center", justifyContent: "center" }}>
       <Text>THIS IS THE List COMPONENT</Text>
       <StatusBar style="auto" />
 
       <Text> Fetch Exercise API</Text>
       {exerciseLoading && <Text>Loading..</Text>}
       {exerciseData && (
-        <FlatList data={exerciseData} renderItem={renderExerciseItem} keyExtractor={item => item.id.toString()} />
+        <FlatList
+          data={exerciseData}
+          renderItem={renderExerciseItem}
+          keyExtractor={item => item.id.toString()}
+          extraData={selectedId}
+        />
       )}
-    </View>
+    </SafeAreaView>
   );
 }
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    marginTop: StatusBar.currentHeight || 0
+  },
+  item: {
+    padding: 20,
+    marginVertical: 8,
+    marginHorizontal: 16
+  },
+  title: {
+    fontSize: 32
+  }
+});
 
 // const styles = StyleSheet.create({
 //   container: {
