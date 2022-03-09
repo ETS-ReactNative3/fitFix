@@ -35,8 +35,23 @@ https://wger.de/api/v2/exerciseinfo/
 const Stack = createNativeStackNavigator();
 
 function App({ navigation }) {
-  // const [exerciseData, setExerciseData] = useState([]);
-  // const [exerciseLoading, setExerciseLoading] = useState(true);
+  const [exerciseData, setExerciseData] = useState([]);
+  const [exerciseLoading, setExerciseLoading] = useState(true);
+  const fetchExerciseData = async () => {
+    const resp = await fetch(`${baseUrl}/exercise/`);
+    const data = await resp.json();
+    console.log("---------");
+    console.log(data);
+    console.log(data.results);
+    console.log("---------");
+    setExerciseData(data.results);
+    setExerciseLoading(false);
+  };
+
+  useEffect(() => {
+    fetchExerciseData();
+  }, []);
+
   return (
     <>
       <NavigationContainer>
@@ -49,7 +64,7 @@ function App({ navigation }) {
             /* muscles={makeMuscleRequest()}*/
             /*equipment={makeEquipmentRequest()}*/
           />
-          <Stack.Screen name="List" component={List} options={{ title: "Exercise List" }} /*exercises={exercises}*/ />
+          <Stack.Screen name="List" component={List} options={{ title: "Exercise List" }} exerciseData={exerciseData} />
           <Stack.Screen name="Details" component={Details} options={{ title: "Exercise Details" }} /*exercises={exercises}*/ />
         </Stack.Navigator>
       </NavigationContainer>
