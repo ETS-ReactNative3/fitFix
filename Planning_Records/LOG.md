@@ -110,3 +110,4 @@
 | 03/08/22          | 19:06     | Adding ability to delete, watching https://www.youtube.com/watch?v=k-Ra0tdCEOc&ab_channel=PradipDebnath                                                         |
 | 03/08/22          | 20:15     | Found the video I used before: https://www.youtube.com/watch?v=Hf4MJH0jDb4&ab_channel=TraversyMedia                                                             |
 | 03/08/22          | 20:44     | X has been added, now adding delete functionality                                                                                                               |
+| 03/08/22          | 20:56     | researching modal                                                                                                                                               |
