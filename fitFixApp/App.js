@@ -5,27 +5,34 @@ import Home from "./components/Home";
 import Form from "./components/Form";
 import List from "./components/List";
 import Details from "./components/Details";
+import { NativeBaseProvider, Text, Box } from "native-base";
 import { v4 as uuidv4 } from "uuid";
 
 const Stack = createNativeStackNavigator();
 
 function App({ navigation }) {
   return (
-    <>
-      <NavigationContainer>
-        <Stack.Navigator>
-          <Stack.Screen name="Home" component={Home} options={{ title: "Welcome" }} />
-          <Stack.Screen
-            name="Form"
-            component={Form}
-            options={{ title: "Form" }}
-            /*equipment={makeEquipmentRequest()}*/
-          />
-          <Stack.Screen name="List" component={List} options={{ title: "Exercise List" }} />
-          <Stack.Screen name="Details" component={Details} options={{ title: "Exercise Details" }} /*exercises={exercises}*/ />
-        </Stack.Navigator>
-      </NavigationContainer>
-    </>
+    <NativeBaseProvider>
+      <Box flex={1} bg="#fff" alignItems="center" justifyContent="center">
+        <NavigationContainer>
+          <Stack.Navigator>
+            <Stack.Screen name="Home" component={Home} options={{ title: "Welcome" }} />
+            <Stack.Screen
+              name="Form"
+              component={Form}
+              options={{ title: "Form" }}
+              /*equipment={makeEquipmentRequest()}*/
+            />
+            <Stack.Screen name="List" component={List} options={{ title: "Exercise List" }} />
+            <Stack.Screen
+              name="Details"
+              component={Details}
+              options={{ title: "Exercise Details" }} /*exercises={exercises}*/
+            />
+          </Stack.Navigator>
+        </NavigationContainer>
+      </Box>
+    </NativeBaseProvider>
   );
 }
 

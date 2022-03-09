@@ -104,4 +104,4 @@
 | 03/08/22          | 17:12     | **<---BREAK - Dinner--->**                                                                                                                                      |
 | 03/08/22          | 17:51     | Return to calling exercise endpoint in list.js                                                                                                                  |
 | 03/08/22          | 18:09     | Get rid of native base references in all files                                                                                                                  |
-| 03/08/22          | 18:09     | Get rid of native base references in all files                                                                                                                  |
+| 03/08/22          | 18:22     | Reading nativeBase docs https://docs.nativebase.io/getting-started                                                                                              |
