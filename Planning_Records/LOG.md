@@ -101,3 +101,5 @@
 | 03/08/22          | 15:07     | working on getting second api call in separate flat list                                                                                                        |
 | 03/08/22          | 15:19     | working on getting all exercises to pass down in list, and render as selectable flatlist                                                                        |
 | 03/08/22          | 16:20     | reading about passing props down to components                                                                                                                  |
+| 03/08/22          | 17:12     | **<---BREAK - Dinner--->**                                                                                                                                      |
+| 03/08/22          | 17:51     | Return to calling exercise endpoint in list.js                                                                                                                  |
