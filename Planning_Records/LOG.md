@@ -111,3 +111,4 @@
 | 03/08/22          | 20:15     | Found the video I used before: https://www.youtube.com/watch?v=Hf4MJH0jDb4&ab_channel=TraversyMedia                                                             |
 | 03/08/22          | 20:44     | X has been added, now adding delete functionality                                                                                                               |
 | 03/08/22          | 20:56     | researching modal                                                                                                                                               |
+| 03/08/22          | 22:03     | continuing modal detail: currently working on toggle, no id props are getting passed yet                                                                        |

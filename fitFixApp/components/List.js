@@ -5,30 +5,34 @@ const baseUrl = "https://wger.de/api/v2";
 import { v4 as uuidv4 } from "uuid";
 import Icon from "react-native-vector-icons/FontAwesome";
 
-const Item = ({ item, onPress, backgroundColor, textColor, deleteItem }) => (
-  <TouchableOpacity onPress={onPress} style={[styles.item, backgroundColor]}>
-    <View style={styles.listItem}>
-      <Text style={[styles.title, textColor]}>{item.name}</Text>
-      {/* <View style={{ flexDirection: "row" }}> */}
-      {/* <Icon name="ellipsis-h" size={20} color="#000000" onPress={() => setModalOpen(true)} /> */}
-      <Icon /*style={{ marginLeft: 25 }} */ name="remove" size={20} color="#000000" onPress={() => deleteItem(item.id)} />
-      {/* </View> */}
-    </View>
-  </TouchableOpacity>
-);
-
 export default function List({ navigation }) {
   const [selectedId, setSelectedId] = useState(null);
   const [exerciseData, setExerciseData] = useState([]);
   const [exerciseLoading, setExerciseLoading] = useState(true);
   const [modalOpen, setModalOpen] = useState(false);
+  const [modalData, setModalData] = useState([exerciseData]);
+  const Item = ({ item, onPress, backgroundColor, textColor, deleteItem, showItem, setModalOpen }) => (
+    <TouchableOpacity onPress={onPress} style={[styles.item, backgroundColor]}>
+      <View style={styles.listItem}>
+        <Text style={[styles.title, textColor]}>{item.name}</Text>
+        {/* <View style={{ flexDirection: "row" }}> */}
+        <Icon
+          name="ellipsis-h"
+          size={20}
+          color="#000000"
+          onPress={() => {
+            setModalOpen(true);
+            showItem(item.id);
+          }}
+        />
+        <Icon /*style={{ marginLeft: 25 }} */ name="remove" size={20} color="#000000" onPress={() => deleteItem(item.id)} />
+        {/* </View> */}
+      </View>
+    </TouchableOpacity>
+  );
   const fetchExerciseData = async () => {
     const resp = await fetch(`${baseUrl}/exercise/`);
     const data = await resp.json();
-    console.log("---------");
-    console.log(data);
-    console.log(data.results);
-    console.log("---------");
     setExerciseData(data.results);
     setExerciseLoading(false);
   };
@@ -52,6 +56,11 @@ export default function List({ navigation }) {
   const deleteItem = id => {
     setExerciseData(prevItems => {
       return prevItems.filter(item => item.id != id);
+    });
+  };
+  const showItem = id => {
+    setModalData(exerciseData => {
+      return exerciseData.filter(item => item.id === id);
     });
   };
   return (
