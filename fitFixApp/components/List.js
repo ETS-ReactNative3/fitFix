@@ -9,10 +9,10 @@ const Item = ({ item, onPress, backgroundColor, textColor, deleteItem }) => (
   <TouchableOpacity onPress={onPress} style={[styles.item, backgroundColor]}>
     <View style={styles.listItem}>
       <Text style={[styles.title, textColor]}>{item.name}</Text>
-      <View style={{ flexDirection: "row" }}>
-        <Icon name="ellipsis-h" size={20} color="000" onPress={() => deleteItem(item.id)} />
-        <Icon style={{ marginLeft: 25 }} name="remove" size={20} color="000" onPress={() => deleteItem(item.id)} />
-      </View>
+      {/* <View style={{ flexDirection: "row" }}> */}
+      {/* <Icon name="ellipsis-h" size={20} color="#000000" onPress={() => setModalOpen(true)} /> */}
+      <Icon /*style={{ marginLeft: 25 }} */ name="remove" size={20} color="#000000" onPress={() => deleteItem(item.id)} />
+      {/* </View> */}
     </View>
   </TouchableOpacity>
 );
@@ -34,7 +34,7 @@ export default function List({ navigation }) {
   };
   const renderExerciseItem = ({ item }) => {
     const backgroundColor = item.id === selectedId ? "#fd90a3" : "#cffc5b";
-    const color = item.id === selectedId ? "white" : "black";
+    const color = item.id === selectedId ? "white" : "#000000";
     return (
       <Item
         item={item}
@@ -58,15 +58,14 @@ export default function List({ navigation }) {
     <SafeAreaView style={{ flex: 1, alignItems: "center", justifyContent: "center" }}>
       <Text>THIS IS THE List COMPONENT</Text>
       <StatusBar style="auto" />
-
-      <Text> Fetch Exercise API</Text>
-      <Modal visible={modalOpen}>
-        <View style={StyleSheet.modalContent}>
+      <Modal visible={modalOpen} animationType="fade">
+        <View style={styles.modalContent}>
           <Text>This is where exercise details will go</Text>
-          <Icon name="remove" size={20} color="000" onPress={() => deleteItem(item.id)} />
+          <Text>This is where exercise details will go</Text>
+          <Icon name="remove" size={40} color="#000000" onPress={() => setModalOpen(false)} style={styles.modalToggle} />
         </View>
       </Modal>
-      {/* <Icon name="ellipsis-h" size={20} color="000" onPress={() => deleteItem(item.id)} /> */}
+      <Icon name="ellipsis-h" size={20} color="#000000" onPress={() => setModalOpen(true)} style={styles.modalToggle} />
       {exerciseLoading && <Text>Loading..</Text>}
       {exerciseData && (
         <FlatList
@@ -97,5 +96,22 @@ const styles = StyleSheet.create({
   },
   title: {
     fontSize: 12
+  },
+  modalContent: {
+    flex: 1,
+    flexDirection: "column",
+    alignItems: "center",
+    justifyContent: "center"
+  },
+  modalToggle: {
+    marginBottom: 10,
+    // borderWidth: 1,
+    // borderColor: "#f2f2f2",
+    // backgroundColor: "#fe8f71",
+    padding: 10,
+    borderColor: "#000000",
+    borderWidth: 1,
+    borderRadius: 20,
+    alignSelf: "center"
   }
 });
