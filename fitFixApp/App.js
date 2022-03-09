@@ -1,13 +1,12 @@
 import * as React from "react";
 import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
-import { Text } from "react-native";
 import Home from "./components/Home";
 import Form from "./components/Form";
 import List from "./components/List";
 import Details from "./components/Details";
 import { View } from "react-native";
-// import { NativeBaseProvider, Text, Box } from "native-base";
+import { NativeBaseProvider, Text, Box } from "native-base";
 import { v4 as uuidv4 } from "uuid";
 import { StatusBar } from "expo-status-bar";
 import { useState, useEffect } from "react";
@@ -44,19 +43,21 @@ function App({ navigation }) {
   // console.log(muscleLoading == true);
   // console.log(equipmentLoading);
 
-  if (muscleLoading && equipmentLoading) {
-    return (
-      <>
-        <SafeAreaView>
-          <Text>Loading...</Text>
-        </SafeAreaView>
-      </>
-    );
-  } else {
-    // console.log("muscleData in App.js");
-    // console.log(...muscleData);
-    return (
-      // <NativeBaseProvider>
+  // if (muscleLoading && equipmentLoading) {
+  //   return (
+  //     <NativeBaseProvider>
+  //       <>
+  //         <SafeAreaView>
+  //           <Text>Loading...</Text>
+  //         </SafeAreaView>
+  //       </>
+  //     </NativeBaseProvider>
+  //   );
+  // } else {
+  console.log("muscleData in App.js");
+  console.log(muscleData);
+  return (
+    <NativeBaseProvider>
       <>
         <NavigationContainer>
           <Stack.Navigator>
@@ -66,10 +67,12 @@ function App({ navigation }) {
               component={Form}
               options={{ title: "Form" }}
               initialParams={{
-                equipment: { equipmentData },
-                muscle: { muscleData },
+                equipmentData: { equipmentData },
+                muscleData: { muscleData },
                 muscleLoading: { muscleLoading },
-                equipmentLoading: { equipmentLoading }
+                equipmentLoading: { equipmentLoading },
+                setEquipmentData: { setEquipmentData },
+                setMuscleData: { setMuscleData }
               }}
               // setMuscleLoading={setMuscleLoading}
               // setEquipmentLoading={setEquipmentLoading}
@@ -83,9 +86,9 @@ function App({ navigation }) {
           </Stack.Navigator>
         </NavigationContainer>
       </>
-      // </NativeBaseProvider>
-    );
-  }
+    </NativeBaseProvider>
+  );
 }
+// }
 
 export default App;
