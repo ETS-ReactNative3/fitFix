@@ -27,7 +27,7 @@ export default function List({ navigation }) {
         <Modal visible={modalOpen} animationType="fade">
           <View style={styles.modalContent}>
             <Icon name="remove" size={40} color="#000000" onPress={() => setModalOpen(false)} style={styles.modalToggle} />
-            <Text>{item.name}</Text>
+            <Text style={{ fontSize: 25, color: "#f5646b" }}>{item.name}</Text>
             <Text>{item.description}</Text>
           </View>
         </Modal>
@@ -70,16 +70,16 @@ export default function List({ navigation }) {
       return prevItems.filter(item => item.id != id);
     });
   };
-  const indItemData = id => {
-    setModalData(exerciseData => {
-      return exerciseData.filter(item => item.id === id);
-    });
-  };
+  // const indItemData = id => {
+  //   setModalData(exerciseData => {
+  //     return exerciseData.filter(item => item.id === id);
+  //   });
+  // };
   return (
     <SafeAreaView style={{ flex: 1, alignItems: "center", justifyContent: "center" }}>
-      <Text>THIS IS THE List COMPONENT</Text>
+      <Text style={{ fontSize: 25, color: "#000000" }}>EXERCISES</Text>
       <StatusBar style="auto" />
-      <Icon name="ellipsis-h" size={20} color="#000000" onPress={() => setModalOpen(true)} style={styles.modalToggle} />
+      {/* <Icon name="ellipsis-h" size={20} color="#000000" onPress={() => setModalOpen(true)} style={styles.modalToggle} /> */}
       {exerciseLoading && <Text>Loading..</Text>}
       {exerciseData && (
         <FlatList
@@ -115,7 +115,8 @@ const styles = StyleSheet.create({
     flex: 1,
     flexDirection: "column",
     alignItems: "center",
-    justifyContent: "center"
+    justifyContent: "center",
+    marginHorizontal: 20
   },
   modalToggle: {
     marginBottom: 10,
