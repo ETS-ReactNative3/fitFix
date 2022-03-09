@@ -6,24 +6,17 @@ const baseUrl = "https://wger.de/api/v2";
 import { v4 as uuidv4 } from "uuid";
 import Icon from "react-native-vector-icons/FontAwesome";
 
-const Item = ({ item, onPress, backgroundColor, textColor }) => (
+const Item = ({ item, onPress, backgroundColor, textColor, deleteItem }) => (
   <TouchableOpacity onPress={onPress} style={[styles.item, backgroundColor]}>
     <View style={styles.listItem}>
       <Text style={[styles.title, textColor]}>{item.name}</Text>
-      <Icon name="remove" size={20} color="000" />
+      <Icon name="remove" size={20} color="000" onPress={() => deleteItem(item.id)} />
     </View>
   </TouchableOpacity>
 );
 {
   /* <Text>{item.name}</Text>; */
 }
-
-const deleteItem = id => {
-  setItems(prevItems => {
-    alert("delete: " + id);
-    return prevItems.filter(item => item.id != id);
-  });
-};
 
 export default function List({ navigation }) {
   const [selectedId, setSelectedId] = useState(null);
@@ -55,6 +48,13 @@ export default function List({ navigation }) {
   useEffect(() => {
     fetchExerciseData();
   }, []);
+
+  const deleteItem = id => {
+    setExerciseData(prevItems => {
+      alert("delete: " + id);
+      return prevItems.filter(item => item.id != id);
+    });
+  };
   return (
     <SafeAreaView style={{ flex: 1, alignItems: "center", justifyContent: "center" }}>
       <Text>THIS IS THE List COMPONENT</Text>
