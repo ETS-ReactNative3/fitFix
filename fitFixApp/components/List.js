@@ -2,9 +2,10 @@ import React, { useState, useEffect } from "react";
 import { StyleSheet, Button, View, Modal, TouchableOpacity } from "react-native";
 import { Box, FlatList, Center, Text } from "native-base";
 import { StatusBar } from "expo-status-bar";
-import ListItem from "./ListItem";
-import { uuid } from "uuidv4";
+// import ListItem from "./ListItem";
+// import { uuid } from "uuidv4";
 const baseUrl = "https://wger.de/api/v2";
+import { v4 as uuidv4 } from "uuid";
 
 export default function List({ navigation }) {
   const [exerciseData, setExerciseData] = useState([]);
@@ -19,32 +20,6 @@ export default function List({ navigation }) {
     setExerciseData(data.results);
     setExerciseLoading(false);
   };
-  // const [items, setItems] = useState([
-  //   {
-  //     id: 345,
-  //     uuid: "c788d643-150a-4ac7-97ef-84643c6419bf",
-  //     name: "2 Handed Kettlebell Swing"
-  //   },
-  //   {
-  //     id: 174,
-  //     uuid: "99881bdd-43d7-4c3b-82ed-9c187d0455b7",
-  //     name: "Abduktoren-Maschine"
-  //   },
-  //   {
-  //     id: 223,
-  //     uuid: "e56d0a17-b1b8-427d-991e-97c530c7db6a",
-  //     name: "Adduktoren Maschine"
-  //   }
-  // ]);
-  // const [exData, setExData] = useState([exerciseData]);
-  // const [exerciseData, setExerciseData] = useState([exData]);
-
-  // const deleteItem = id => {
-  //   setItems(prevItems => {
-  //     alert("delete: " + id);
-  //     return prevItems.filter(item => item.id != id);
-  //   });
-  // };
 
   const renderExerciseItem = ({ item }) => {
     return <Text>{item.name}</Text>;
@@ -151,3 +126,30 @@ export default function List({ navigation }) {
 //     justifyContent: "center"
 //   }
 // });
+
+// const [items, setItems] = useState([
+//   {
+//     id: 345,
+//     uuid: "c788d643-150a-4ac7-97ef-84643c6419bf",
+//     name: "2 Handed Kettlebell Swing"
+//   },
+//   {
+//     id: 174,
+//     uuid: "99881bdd-43d7-4c3b-82ed-9c187d0455b7",
+//     name: "Abduktoren-Maschine"
+//   },
+//   {
+//     id: 223,
+//     uuid: "e56d0a17-b1b8-427d-991e-97c530c7db6a",
+//     name: "Adduktoren Maschine"
+//   }
+// ]);
+// const [exData, setExData] = useState([exerciseData]);
+// const [exerciseData, setExerciseData] = useState([exData]);
+
+// const deleteItem = id => {
+//   setItems(prevItems => {
+//     alert("delete: " + id);
+//     return prevItems.filter(item => item.id != id);
+//   });
+// };

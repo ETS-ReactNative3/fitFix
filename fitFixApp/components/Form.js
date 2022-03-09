@@ -4,6 +4,7 @@ import { Box, FlatList, Center, NativeBaseProvider, Text } from "native-base";
 import { StatusBar } from "expo-status-bar";
 import { useState, useEffect } from "react";
 const baseUrl = "https://wger.de/api/v2";
+import { v4 as uuidv4 } from "uuid";
 
 export default function Form({ navigation }) {
   const [muscleData, setMuscleData] = useState([]);
@@ -48,27 +49,29 @@ export default function Form({ navigation }) {
 
   return (
     <SafeAreaView style={{ flex: 1, alignItems: "center", justifyContent: "center" }}>
-      {/* <NativeBaseProvider> */}
-      <Text>THIS IS THE FORM1 COMPONENT</Text>
-      <StatusBar style="auto" />
-      <Button title="Go to List" onPress={() => navigation.navigate("List")} />
-      <View>
-        <Center flex={1}>
-          <Box> Fetch Muscle API</Box>
-          {muscleLoading && <Box>Loading..</Box>}
-          {muscleData && <FlatList data={muscleData} renderItem={renderMuscleItem} keyExtractor={item => item.id.toString()} />}
-        </Center>
-      </View>
-      <View>
-        <Center flex={1}>
-          <Box> Fetch Equipment API</Box>
-          {equipmentLoading && <Box>Loading..</Box>}
-          {equipmentData && (
-            <FlatList data={equipmentData} renderItem={renderEquipmentItem} keyExtractor={item => item.id.toString()} />
-          )}
-        </Center>
-      </View>
-      {/* </NativeBaseProvider> */}
+      <NativeBaseProvider>
+        <Text>THIS IS THE FORM1 COMPONENT</Text>
+        <StatusBar style="auto" />
+        <Button title="Go to List" onPress={() => navigation.navigate("List")} />
+        <View>
+          <Center flex={1}>
+            <Box> Fetch Muscle API</Box>
+            {muscleLoading && <Box>Loading..</Box>}
+            {muscleData && (
+              <FlatList data={muscleData} renderItem={renderMuscleItem} keyExtractor={item => item.id.toString()} />
+            )}
+          </Center>
+        </View>
+        <View>
+          <Center flex={1}>
+            <Box> Fetch Equipment API</Box>
+            {equipmentLoading && <Box>Loading..</Box>}
+            {equipmentData && (
+              <FlatList data={equipmentData} renderItem={renderEquipmentItem} keyExtractor={item => item.id.toString()} />
+            )}
+          </Center>
+        </View>
+      </NativeBaseProvider>
     </SafeAreaView>
   );
 }

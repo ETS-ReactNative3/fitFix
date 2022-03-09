@@ -103,3 +103,4 @@
 | 03/08/22          | 16:20     | reading about passing props down to components                                                                                                                  |
 | 03/08/22          | 17:12     | **<---BREAK - Dinner--->**                                                                                                                                      |
 | 03/08/22          | 17:51     | Return to calling exercise endpoint in list.js                                                                                                                  |
+| 03/08/22          | 18:09     | Get rid of native base references in all files                                                                                                                  |
