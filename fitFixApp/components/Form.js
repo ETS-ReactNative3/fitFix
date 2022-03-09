@@ -5,46 +5,29 @@ import { useState, useEffect } from "react";
 const baseUrl = "https://wger.de/api/v2";
 import { v4 as uuidv4 } from "uuid";
 
-export default function Form({ navigation }) {
-  const [muscleData, setMuscleData] = useState([]);
-  const [equipmentData, setEquipmentData] = useState([]);
-  const [muscleLoading, setMuscleLoading] = useState(true);
-  const [equipmentLoading, setEquipmentLoading] = useState(true);
-
-  const fetchMuscleData = async () => {
-    const resp = await fetch(`${baseUrl}/muscle/`);
-    const data = await resp.json();
-    console.log("---------");
-    console.log(data);
-    console.log(data.results);
-    console.log("---------");
-    setMuscleData(data.results);
-    setMuscleLoading(false);
-  };
-  const fetchEquipmentData = async () => {
-    const resp = await fetch(`${baseUrl}/equipment/`);
-    const data = await resp.json();
-    console.log("---------");
-    console.log(data);
-    console.log(data.results);
-    console.log("---------");
-    setEquipmentData(data.results);
-    setEquipmentLoading(false);
+export default function Form({ navigation, props }) {
+  const {
+    navigation,
+    equipment,
+    muscle,
+    muscleLoading,
+    equipmentLoading,
+    setMuscleLoading,
+    setEquipmentLoading
+  } = props.route.params;
+  // const [muscle, setMuscleData] = useState([]);
+  // const [equipment, setEquipmentData] = useState([]);
+  // const [muscleLoading, setMuscleLoading] = useState(true);
+  // const [equipmentLoading, setEquipmentLoading] = useState(true);
+  const renderMuscleItem = muscle => {
+    return <Text>{muscle.name}</Text>;
   };
 
-  const renderMuscleItem = ({ item }) => {
-    return <Text>{item.name}</Text>;
+  const renderEquipmentItem = equipment => {
+    return <Text>{equipment.name}</Text>;
   };
-  useEffect(() => {
-    fetchMuscleData();
-  }, []);
 
-  const renderEquipmentItem = ({ item }) => {
-    return <Text>{item.name}</Text>;
-  };
-  useEffect(() => {
-    fetchEquipmentData();
-  }, []);
+  console.log(props.route.params.muscle);
 
   return (
     <SafeAreaView style={{ flex: 1, alignItems: "center", justifyContent: "center" }}>
@@ -55,14 +38,20 @@ export default function Form({ navigation }) {
       </View>
       <View style={{ flex: 2, backgroundColor: "#C6E2FF" }}>
         <Text> Fetch Muscle API</Text>
-        {muscleLoading && <Text>Loading..</Text>}
-        {muscleData && <FlatList data={muscleData} renderItem={renderMuscleItem} keyExtractor={item => item.id.toString()} />}
+        {props.muscleLoading && <Text>Loading..</Text>}
+        {props.muscle && (
+          <FlatList data={props.muscle} renderItem={renderMuscleItem} keyExtractor={muscle => props.muscle.id.toString()} />
+        )}
       </View>
       <View style={{ flex: 2, backgroundColor: "blue" }}>
         <Text> Fetch Equipment API</Text>
-        {equipmentLoading && <Text>Loading..</Text>}
-        {equipmentData && (
-          <FlatList data={equipmentData} renderItem={renderEquipmentItem} keyExtractor={item => item.id.toString()} />
+        {props.equipmentLoading && <Text>Loading..</Text>}
+        {props.equipment && (
+          <FlatList
+            data={props.equipment}
+            renderItem={renderEquipmentItem}
+            keyExtractor={equipment => props.equipment.id.toString()}
+          />
         )}
       </View>
     </SafeAreaView>

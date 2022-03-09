@@ -117,3 +117,5 @@
 | **Session Total** | **12:17** | **Running Total: 39:13**                                                                                                                                        |
 | .....             |
 | 03/09/22          | 8:22      | Session Start: Continue working on detail modal toggle                                                                                                          |
+| 03/09/22          | 9:39      | Start on building checkboxes, form, submit on form page                                                                                                         |
+| 03/09/22          | 11:21     | working on passing data as props in form component                                                                                                              |
