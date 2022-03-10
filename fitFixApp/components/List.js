@@ -14,6 +14,23 @@ export default function List({ navigation }) {
   // const itemOnPress = () => {
   //   setModalOpen(true);
   // };
+  const itemDescription = item => {
+    if (item.description != "<p>.</p>") {
+      return (
+        <Text style={styles.modalBody}>
+          {item.description
+            .replace("<p>", "")
+            .replace("</p>", "")
+            .replace("<ul>", "")
+            .replace("</ul>", "")
+            .replace("<li>", "")
+            .replace("</li>", "")}
+        </Text>
+      );
+    } else {
+      return <Text style={styles.modalBody}>Exercise has no description</Text>;
+    }
+  };
   const Item = ({ item, backgroundColor, textColor, deleteItem }) => (
     <TouchableOpacity
       onPress={() => {
@@ -26,9 +43,9 @@ export default function List({ navigation }) {
         <Icon name="remove" size={20} color="#000000" onPress={() => deleteItem(item.id)} />
         <Modal visible={modalOpen} animationType="fade">
           <View style={styles.modalContent}>
-            <Icon name="remove" size={40} color="#000000" onPress={() => setModalOpen(false)} style={styles.modalToggle} />
             <Text style={styles.itemText}>{item.name}</Text>
-            <Text style={styles.modalBody}>{item.description}</Text>
+            <Text style={styles.modalBody}>{itemDescription(item)}</Text>
+            <Icon name="remove" size={40} color="#000000" onPress={() => setModalOpen(false)} style={styles.modalToggle} />
           </View>
         </Modal>
       </View>
@@ -51,15 +68,17 @@ export default function List({ navigation }) {
   const renderExerciseItem = ({ item }) => {
     const backgroundColor = item.id === selectedId ? "#fd90a3" : "#cffc5b";
     const color = item.id === selectedId ? "white" : "#000000";
-    return (
-      <Item
-        item={item}
-        onPress={() => setSelectedId(item.id)}
-        backgroundColor={{ backgroundColor }}
-        textColor={{ color }}
-        deleteItem={deleteItem}
-      />
-    );
+    if (item.language == 2) {
+      return (
+        <Item
+          item={item}
+          onPress={() => setSelectedId(item.id)}
+          backgroundColor={{ backgroundColor }}
+          textColor={{ color }}
+          deleteItem={deleteItem}
+        />
+      );
+    }
   };
   useEffect(() => {
     fetchExerciseData();

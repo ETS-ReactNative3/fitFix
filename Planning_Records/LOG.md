@@ -123,3 +123,6 @@
 | 03/09/22          | 12:52     | Return to passing data as props in form to get lists to render                                                                                                  |
 | 03/09/22          | 13:23     | pivoting to styling for a bit                                                                                                                                   |
 | 03/09/22          | 13:23     | Return to passing data as props in form to get lists to render                                                                                                  |
+
+| 03/09/22 | 16:05 | **<---BREAK--->** WIP: https://medium.com/swlh/passing-params-with-react-navigation-dd86c5de024c |
+| 03/09/22 | 17:08 | conditional rendering on item description in list component|

@@ -1,6 +1,7 @@
 import * as React from "react";
 import { StyleSheet, View, Text, Image, ImageBackground, TouchableOpacity } from "react-native";
 import { StatusBar } from "expo-status-bar";
+import ImageOverlay from "react-native-image-overlay";
 
 export default function Home({ navigation }) {
   return (
@@ -41,12 +42,12 @@ const styles = StyleSheet.create({
     alignItems: "center",
     justifyContent: "center"
   },
-  image: {
-    width: 250,
-    height: 120,
-    borderRadius: 4,
-    marginBottom: 5
-  },
+  // image: {
+  //   // width: 250,
+  //   // height: 120,
+  //   // borderRadius: 4,
+  //   // marginBottom: 5
+  // },
   image: {
     flex: 1,
     justifyContent: "center",
