@@ -27,7 +27,8 @@ export default function List({ navigation }) {
               .replace("</ul>", "")
               .replace("<li>", "")
               .replace("</li>", "")}
-          </Text>
+          </Text>{" "}
+          " "
         </>
       );
     } else {
