@@ -77,15 +77,12 @@ function App({ navigation }) {
               name="Form"
               component={Form}
               options={{ title: "Form" }}
-              initialParams={{
-                navigation: { navigation },
-                equipmentData: { equipmentData },
-                muscleData: { muscleData }
-                // muscleLoading: { muscleLoading },
-                // equipmentLoading: { equipmentLoading },
-                // setEquipmentData: { setEquipmentData },
-                // setMuscleData: { setMuscleData }
-              }}
+              equipmentData={equipmentData}
+              muscleData={muscleData}
+              // initialParams={{
+              //   navigation: { navigation },
+              //   equipmentData: { equipmentData },
+              // }}
               // setMuscleLoading={setMuscleLoading}
               // setEquipmentLoading={setEquipmentLoading}
             />

@@ -3,57 +3,170 @@ import { StyleSheet, Button, View, CheckBox, SafeAreaView, FlatList, Text, Touch
 import { StatusBar } from "expo-status-bar";
 import { v4 as uuidv4 } from "uuid";
 
-export default function Form({ props, navigation }) {
-  const { equipmentData, muscleData } = props.route.params;
+const premadeMuscleData = [
+  {
+    id: 2,
+    name: "Anterior deltoid"
+  },
+  {
+    id: 1,
+    name: "Biceps brachii"
+  },
+  {
+    id: 11,
+    name: "Biceps femoris"
+  },
+  {
+    id: 13,
+    name: "Brachialis"
+  },
+  {
+    id: 7,
+    name: "Gastrocnemius"
+  },
+  {
+    id: 8,
+    name: "Gluteus maximus"
+  },
+  {
+    id: 12,
+    name: "Latissimus dorsi"
+  },
+  {
+    id: 14,
+    name: "Obliquus externus abdominis"
+  },
+  {
+    id: 4,
+    name: "Pectoralis major"
+  },
+  {
+    id: 10,
+    name: "Quadriceps femoris"
+  },
+  {
+    id: 6,
+    name: "Rectus abdominis"
+  },
+  {
+    id: 3,
+    name: "Serratus anterior"
+  },
+  {
+    id: 15,
+    name: "Soleus"
+  },
+  {
+    id: 9,
+    name: "Trapezius"
+  },
+  {
+    id: 5,
+    name: "Triceps brachii"
+  }
+];
 
+const premadeEquipmentData = [
+  {
+    id: 1,
+    name: "Barbell"
+  },
+  {
+    id: 8,
+    name: "Bench"
+  },
+  {
+    id: 3,
+    name: "Dumbbell"
+  },
+  {
+    id: 4,
+    name: "Gym mat"
+  },
+  {
+    id: 9,
+    name: "Incline bench"
+  },
+  {
+    id: 10,
+    name: "Kettlebell"
+  },
+  {
+    id: 7,
+    name: "none (bodyweight exercise)"
+  },
+  {
+    id: 6,
+    name: "Pull-up bar"
+  },
+  {
+    id: 5,
+    name: "Swiss Ball"
+  },
+  {
+    id: 2,
+    name: "SZ-Bar"
+  }
+];
+
+const Muscle = ({ item }) => (
+  <View>
+    <Text>{item.name}</Text>
+  </View>
+);
+const Equipment = ({ item }) => (
+  <View>
+    <Text>{item.name}</Text>
+  </View>
+);
+
+export default function Form({ navigation }) {
   const renderMuscleItem = ({ item }) => {
-    console.log("renderMuscleItem reached");
-    return <Text>{item.name}</Text>;
+    <Muscle name={item} />;
   };
-
   const renderEquipmentItem = ({ item }) => {
-    console.log("renderEquipmentItem reached");
-    return <Text>{item.name}</Text>;
+    <Equipment name={item} />;
   };
-  console.log("muscle in form");
-  console.log(muscleData);
-  console.log("equipment in form");
-  console.log(equipmentData);
-  const testVariable = equipmentData;
-  console.log("testVariable in form");
-  console.log(testVariable);
 
   return (
     <SafeAreaView style={{ flex: 1, alignItems: "center", justifyContent: "center" }}>
-      <View style={{ flex: 0.5, backgroundColor: "#C6E2FF" }}>
-        <TouchableOpacity /*style={styles.homeButton} */ onPress={() => navigation.navigate("List")}>
-          <Text /*style={styles.buttonText}*/>See full list of exercises</Text>
+      <View style={{ flex: 0.5 }}>
+        <TouchableOpacity style={styles.homeButton} onPress={() => navigation.navigate("List")}>
+          <Text style={styles.buttonText}>See full list of exercises</Text>
         </TouchableOpacity>
         <StatusBar style="auto" />
-        <Button title="Go to List" onPress={() => navigation.navigate("List")} />
       </View>
       <View style={{ flex: 2, backgroundColor: "#C6E2FF" }}>
         <Text> Fetch Muscle API</Text>
-        {/* {muscleLoading && <Text>Loading..</Text>} */}
-        {/* {muscle && <FlatList data={muscle} renderItem={renderMuscleItem} keyExtractor={muscle => muscle.id.toString()} />} */}
-        {/* <FlatList data={muscleData} renderItem={renderMuscleItem()} keyExtractor={muscle => muscle.id.toString()} /> */}
+
+        <FlatList data={premadeMuscleData} keyExtractor={item => item.id.toString()} renderItem={renderMuscleItem} />
       </View>
       <View style={{ flex: 2, backgroundColor: "blue" }}>
         <Text> Fetch Equipment API</Text>
-        {/* {equipmentLoading && <Text>Loading..</Text>} */}
-        {/* {equipment && (
-          <FlatList data={equipment} renderItem={renderEquipmentItem} keyExtractor={equipment => equipment.id.toString()} />
-        )} */}
-        {/* <FlatList data={equipmentData} renderItem={renderEquipmentItem()} keyExtractor={equipment => equipment.id.toString()} /> */}
-        <FlatList
-          data={equipmentData}
-          keyExtractor={equipment => equipment.id.toString()}
-          renderItem={({ item }) => <Text>{item.name}</Text>}
-        />
+        <FlatList data={premadeEquipmentData} keyExtractor={item => item.id.toString()} renderItem={renderEquipmentItem} />
       </View>
     </SafeAreaView>
   );
 }
+
+const styles = StyleSheet.create({
+  buttonText: {
+    color: "black",
+    fontWeight: "600",
+    textAlign: "center"
+    // textTransform: "uppercase"
+  },
+  homeButton: {
+    color: "#ffffff",
+    elevation: 8,
+    backgroundColor: "#ffffff",
+    borderRadius: 10,
+    paddingVertical: 10,
+    paddingHorizontal: 12,
+    marginBottom: 20,
+    marginTop: 20
+  }
+});
 // console.log("not destructured:");
 // console.log(props.route.params.muscle);
 // console.log("equipment");
