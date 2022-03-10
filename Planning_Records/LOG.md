@@ -123,9 +123,12 @@
 | 03/09/22          | 12:52     | Return to passing data as props in form to get lists to render                                                                                                  |
 | 03/09/22          | 13:23     | pivoting to styling for a bit                                                                                                                                   |
 | 03/09/22          | 13:23     | Return to passing data as props in form to get lists to render                                                                                                  |
-
-| 03/09/22 | 16:05 | **<---BREAK--->** WIP: https://medium.com/swlh/passing-params-with-react-navigation-dd86c5de024c |
-| 03/09/22 | 17:08 | conditional rendering on item description in list component|
-| 03/09/22 | 18:21 | jsut noticed that clciking on an item in the list opens a completely different description, fixing|
-| 03/09/22 | 19:51 | researching multiple checkbox functionality
-| 03/09/22 | 21:36 | preparing for presentation and generating assets for discord capstone gallery
+| 03/09/22          | 16:05     | **<---BREAK--->** WIP: https://medium.com/swlh/passing-params-with-react-navigation-dd86c5de024c                                                                |
+| 03/09/22          | 17:08     | conditional rendering on item description in list component                                                                                                     |
+| 03/09/22          | 18:21     | jsut noticed that clciking on an item in the list opens a completely different description, fixing                                                              |
+| 03/09/22          | 19:51     | researching multiple checkbox functionality                                                                                                                     |
+| 03/09/22          | 21:36     | preparing for presentation and generating assets for discord capstone gallery                                                                                   |
+| 03/09/22          | 22:32     | End Session                                                                                                                                                     |
+| .....             |
+| **Session Total** | **12:44** | **Running Total: 51:57**                                                                                                                                        |
+| .....             |

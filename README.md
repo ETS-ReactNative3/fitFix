@@ -24,21 +24,7 @@
 
 ## **Description**
 
-_fitfix will return a tailored workout routine for a user based on the specific variables that user feeds into the site. These variables might include factors such as time limit, exercise equipment available, focus muscle groups, weighted/bodyweight._
-
-### MVP
-
-- Two form submissions returns one workout session
-- Return info is based on available equipment & muscle groups to target
-- Returned session data uses REST API Wger via Fetch()
-- Styling: using React Native built-in styling functionality
-- Navigation: React Navigation
-
-### Stretch Goals
-
-- User Authentication -> logging workouts, rating, increasing difficulty over time
-- in-app timer
-- further customization based on user details (age, weight, etc.)
+_fitfix will return a tailored workout routine for a user based on user's selection of exercise equipment and target muscle groups._
 
 ---
 
@@ -57,11 +43,15 @@ _fitfix will return a tailored workout routine for a user based on the specific 
 - Clone the [GitHub repository](https://github.com/ellajtanttu/fitFix)
 - From the main project directory, run `npm install` in the terminal to load necessary plugins and packages.
 - Run `npm install --save-exact react-scripts@3.2.0` to install React version 3.2.0
-- Run `npm run start` to start the application.
+- Follow these [instructions](https://reactnative.dev/docs/environment-setup) to set up your react native dev environment if you have never used Expo or device simulators
+- Run `expo start` to start the application.
 
 ## **Known Bugs**
 
-_None at this time_
+- _All checkboxes are checked at the same time in Form.js_
+- _Exercise click to open Modal doesn't point to the correct id_
+- _User selections are not passed to exercise list to filter results_
+- _flatlist components are nested within a scrollview component_
 
 ## **License**
 
