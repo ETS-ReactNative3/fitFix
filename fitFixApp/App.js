@@ -51,8 +51,8 @@ function App({ navigation }) {
     <NativeBaseProvider>
       <NavigationContainer theme={MyTheme}>
         <Stack.Navigator>
-          <Stack.Screen name="Home" component={Home} options={{ title: "fitFix" }} />
-          <Stack.Screen name="Form" component={Form} options={{ title: "Form" }} />
+          <Stack.Screen name="Home" component={Home} options={{ title: "" }} />
+          <Stack.Screen name="Form" component={Form} options={{ title: "" }} />
           <Stack.Screen name="List" component={List} options={{ title: "Exercise List" }} /*exercises={exercises}*/ />
           <Stack.Screen name="Details" component={Details} options={{ title: "Exercise Details" }} /*exercises={exercises}*/ />
         </Stack.Navigator>

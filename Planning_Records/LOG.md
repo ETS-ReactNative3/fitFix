@@ -128,3 +128,4 @@
 | 03/09/22 | 17:08 | conditional rendering on item description in list component|
 | 03/09/22 | 18:21 | jsut noticed that clciking on an item in the list opens a completely different description, fixing|
 | 03/09/22 | 19:51 | researching multiple checkbox functionality
+| 03/09/22 | 21:36 | preparing for presentation and generating assets for discord capstone gallery

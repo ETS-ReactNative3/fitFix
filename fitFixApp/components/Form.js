@@ -122,6 +122,7 @@ const styles = StyleSheet.create({
   multListBox: {
     // alignItems: "center"
     marginTop: 25
+    // flexDirection: "row"
   },
   h2: {
     color: "#ff6f69",
