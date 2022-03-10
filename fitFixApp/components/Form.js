@@ -1,15 +1,18 @@
 import * as React from "react";
-import { StyleSheet, Button, View, CheckBox, SafeAreaView } from "react-native";
+import { StyleSheet, Button, View, SafeAreaView, TouchableOpacity } from "react-native";
 import { Box, FlatList, Center, NativeBaseProvider, Text } from "native-base";
 import { StatusBar } from "expo-status-bar";
 import { useState, useEffect } from "react";
 const baseUrl = "https://wger.de/api/v2";
+import CheckBox from "expo-checkbox";
 
 export default function Form({ navigation }) {
   const [muscleData, setMuscleData] = useState([]);
   const [equipmentData, setEquipmentData] = useState([]);
   const [muscleLoading, setMuscleLoading] = useState(true);
   const [equipmentLoading, setEquipmentLoading] = useState(true);
+  const [agree, setAgree] = useState(false);
+  const [muscleSelections, setmuscleSelections] = useState([]);
 
   const fetchMuscleData = async () => {
     const resp = await fetch(`${baseUrl}/muscle/`);
@@ -33,14 +36,24 @@ export default function Form({ navigation }) {
   };
 
   const renderMuscleItem = ({ item }) => {
-    return <Text>{item.name}</Text>;
+    return (
+      <View style={styles.listItemView}>
+        <CheckBox value={agree} onValueChange={() => setAgree(!agree)} color={agree ? "#4630EB" : undefined} />
+        <Text style={styles.listItemText}>{item.name}</Text>
+      </View>
+    );
   };
   useEffect(() => {
     fetchMuscleData();
   }, []);
 
   const renderEquipmentItem = ({ item }) => {
-    return <Text>{item.name}</Text>;
+    return (
+      <>
+        <Text style={styles.listItemText}>{item.name}</Text>
+        <Text>{console.log("renderEquipmentItem reached")}</Text>
+      </>
+    );
   };
   useEffect(() => {
     fetchEquipmentData();
@@ -49,24 +62,29 @@ export default function Form({ navigation }) {
   return (
     <SafeAreaView style={{ flex: 1, alignItems: "center", justifyContent: "center" }}>
       <NativeBaseProvider>
-        <Text>THIS IS THE FORM1 COMPONENT</Text>
         <StatusBar style="auto" />
-        {/* <Button title="Go to List" onPress={() => navigation.navigate("List")} /> */}
+        <TouchableOpacity style={styles.homeButton} onPress={() => navigation.navigate("List")}>
+          <Text style={styles.buttonText}>See full list of exercises</Text>
+        </TouchableOpacity>
         <View>
           <Center flex={1}>
-            <Box> Fetch Muscle API</Box>
+            <Text style={styles.header}> Select Focus Muscle Groups</Text>
             {muscleLoading && <Box>Loading..</Box>}
             {muscleData && (
-              <FlatList data={muscleData} renderItem={renderMuscleItem} keyExtractor={item => item.id.toString()} />
+              <FlatList data={muscleData} renderItem={renderMuscleItem} keyExtractor={muscleItem => muscleItem.id.toString()} />
             )}
           </Center>
         </View>
         <View>
           <Center flex={1}>
-            <Box> Fetch Equipment API</Box>
+            <Text style={styles.header}> Select Available Equipment</Text>
             {equipmentLoading && <Box>Loading..</Box>}
             {equipmentData && (
-              <FlatList data={equipmentData} renderItem={renderEquipmentItem} keyExtractor={item => item.id.toString()} />
+              <FlatList
+                data={equipmentData}
+                renderItem={renderEquipmentItem}
+                keyExtractor={equipmentItem => equipmentItem.id.toString()}
+              />
             )}
           </Center>
         </View>
@@ -74,6 +92,44 @@ export default function Form({ navigation }) {
     </SafeAreaView>
   );
 }
+
+const styles = StyleSheet.create({
+  buttonText: {
+    color: "black",
+    fontWeight: "600",
+    textAlign: "center"
+  },
+  header: {
+    color: "#ff6f69",
+    fontWeight: "800",
+    fontSize: 18,
+    textAlign: "center",
+    marginBottom: 20
+  },
+  listItemText: {
+    color: "white",
+    fontWeight: "400",
+    fontSize: 14,
+    textAlign: "left",
+    marginLeft: 20
+  },
+  listItemView: {
+    flexDirection: "row",
+    // justifyContent: "space-between",
+    alignItems: "center",
+    marginBottom: 15
+  },
+  homeButton: {
+    color: "#ffffff",
+    elevation: 8,
+    backgroundColor: "#ffffff",
+    borderRadius: 10,
+    paddingVertical: 10,
+    paddingHorizontal: 12,
+    marginBottom: 20,
+    marginTop: 20
+  }
+});
 
 // const styles = StyleSheet.create({
 //   container: {
