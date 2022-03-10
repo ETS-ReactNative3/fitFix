@@ -1,5 +1,5 @@
 import * as React from "react";
-import { StyleSheet, Button, View, SafeAreaView, TouchableOpacity } from "react-native";
+import { StyleSheet, Button, View, SafeAreaView, TouchableOpacity, ScrollView } from "react-native";
 import { Box, FlatList, Center, NativeBaseProvider, Text } from "native-base";
 import { StatusBar } from "expo-status-bar";
 import { useState, useEffect } from "react";
@@ -35,10 +35,23 @@ export default function Form({ navigation }) {
     setEquipmentLoading(false);
   };
 
+  // setMuscleState(
+  //   muscleData.map(d => {
+  //     return {
+  //       select: false,
+  //       id: d.id,
+
+  //     }
+  //   })
+  // )
+
   const renderMuscleItem = ({ item }) => {
+    console.log("************");
+    console.log(item);
+    console.log("************");
     return (
       <View style={styles.listItemView}>
-        <CheckBox value={agree} onValueChange={() => setAgree(!agree)} color={agree ? "#4630EB" : undefined} />
+        <CheckBox value={agree} onValueChange={() => setAgree(!agree)} color={agree ? "#ff6f69" : undefined} />
         <Text style={styles.listItemText}>{item.name}</Text>
       </View>
     );
@@ -49,10 +62,10 @@ export default function Form({ navigation }) {
 
   const renderEquipmentItem = ({ item }) => {
     return (
-      <>
+      <View style={styles.listItemView}>
+        <CheckBox value={agree} onValueChange={() => setAgree(!agree)} color={agree ? "#ff6f69" : undefined} />
         <Text style={styles.listItemText}>{item.name}</Text>
-        <Text>{console.log("renderEquipmentItem reached")}</Text>
-      </>
+      </View>
     );
   };
   useEffect(() => {
@@ -63,31 +76,38 @@ export default function Form({ navigation }) {
     <SafeAreaView style={{ flex: 1, alignItems: "center", justifyContent: "center" }}>
       <NativeBaseProvider>
         <StatusBar style="auto" />
+        <Text style={styles.h1}> Customize Your Workout</Text>
+        <ScrollView style={styles.multListBox}>
+          <View>
+            <Center flex={1}>
+              <Text style={styles.h2}> Select Focus Muscle Groups</Text>
+              {muscleLoading && <Box>Loading..</Box>}
+              {muscleData && (
+                <FlatList
+                  data={muscleData}
+                  renderItem={renderMuscleItem}
+                  keyExtractor={muscleItem => muscleItem.id.toString()}
+                />
+              )}
+            </Center>
+          </View>
+          <View>
+            <Center flex={1}>
+              <Text style={styles.h2}> Select Available Equipment</Text>
+              {equipmentLoading && <Box>Loading..</Box>}
+              {equipmentData && (
+                <FlatList
+                  data={equipmentData}
+                  renderItem={renderEquipmentItem}
+                  keyExtractor={equipmentItem => equipmentItem.id.toString()}
+                />
+              )}
+            </Center>
+          </View>
+        </ScrollView>
         <TouchableOpacity style={styles.homeButton} onPress={() => navigation.navigate("List")}>
           <Text style={styles.buttonText}>See full list of exercises</Text>
         </TouchableOpacity>
-        <View>
-          <Center flex={1}>
-            <Text style={styles.header}> Select Focus Muscle Groups</Text>
-            {muscleLoading && <Box>Loading..</Box>}
-            {muscleData && (
-              <FlatList data={muscleData} renderItem={renderMuscleItem} keyExtractor={muscleItem => muscleItem.id.toString()} />
-            )}
-          </Center>
-        </View>
-        <View>
-          <Center flex={1}>
-            <Text style={styles.header}> Select Available Equipment</Text>
-            {equipmentLoading && <Box>Loading..</Box>}
-            {equipmentData && (
-              <FlatList
-                data={equipmentData}
-                renderItem={renderEquipmentItem}
-                keyExtractor={equipmentItem => equipmentItem.id.toString()}
-              />
-            )}
-          </Center>
-        </View>
       </NativeBaseProvider>
     </SafeAreaView>
   );
@@ -99,12 +119,25 @@ const styles = StyleSheet.create({
     fontWeight: "600",
     textAlign: "center"
   },
-  header: {
+  multListBox: {
+    // alignItems: "center"
+    marginTop: 25
+  },
+  h2: {
     color: "#ff6f69",
     fontWeight: "800",
     fontSize: 18,
     textAlign: "center",
     marginBottom: 20
+  },
+  h1: {
+    color: "#ffffff",
+    fontWeight: "200",
+    fontSize: 45,
+    textAlign: "center",
+    // marginBottom: 20,
+    lineHeight: 50,
+    marginTop: 50
   },
   listItemText: {
     color: "white",

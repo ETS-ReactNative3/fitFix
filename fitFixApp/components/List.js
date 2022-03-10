@@ -123,6 +123,9 @@ export default function List({ navigation }) {
           extraData={selectedId}
         />
       )}
+      <TouchableOpacity style={styles.homeButton} onPress={() => navigation.navigate("Home")}>
+        <Text style={styles.buttonText}>Start Over</Text>
+      </TouchableOpacity>
     </SafeAreaView>
   );
 }
@@ -182,5 +185,20 @@ const styles = StyleSheet.create({
     // borderWidth: 1,
     // borderRadius: 20,
     alignSelf: "center"
+  },
+  homeButton: {
+    color: "#ffffff",
+    elevation: 8,
+    backgroundColor: "#ffffff",
+    borderRadius: 10,
+    paddingVertical: 10,
+    paddingHorizontal: 12,
+    marginBottom: 20,
+    marginTop: 20
+  },
+  buttonText: {
+    color: "black",
+    fontWeight: "600",
+    textAlign: "center"
   }
 });
