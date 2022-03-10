@@ -22,6 +22,8 @@
 
 ---
 
+<img title="exercise equipment" src="img/fitFix Assets/fitFix.gif" width="400px">
+
 ## **Description**
 
 _fitfix will return a tailored workout routine for a user based on user's selection of exercise equipment and target muscle groups._
