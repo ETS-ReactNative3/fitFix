@@ -15,26 +15,38 @@ export default function List({ navigation }) {
   //   setModalOpen(true);
   // };
   const itemDescription = item => {
+    console.log(item.id);
     if (item.description != "<p>.</p>") {
       return (
-        <Text style={styles.modalBody}>
-          {item.description
-            .replace("<p>", "")
-            .replace("</p>", "")
-            .replace("<ul>", "")
-            .replace("</ul>", "")
-            .replace("<li>", "")
-            .replace("</li>", "")}
-        </Text>
+        <>
+          <Text style={styles.modalBody}>
+            {item.description
+              .replace("<p>", "")
+              .replace("</p>", "")
+              .replace("<ul>", "")
+              .replace("</ul>", "")
+              .replace("<li>", "")
+              .replace("</li>", "")}
+          </Text>
+        </>
       );
     } else {
       return <Text style={styles.modalBody}>Exercise has no description</Text>;
     }
   };
+
+  const onPressItem = item => {
+    setModalOpen(true);
+    setSelectedId(item.id);
+    console.log("------------");
+    console.log(selectedId);
+    console.log("------------");
+  };
+
   const Item = ({ item, backgroundColor, textColor, deleteItem }) => (
     <TouchableOpacity
       onPress={() => {
-        setModalOpen(true);
+        onPressItem(item);
       }}
       style={[styles.item, backgroundColor]}
     >
@@ -43,7 +55,7 @@ export default function List({ navigation }) {
         <Icon name="remove" size={20} color="#000000" onPress={() => deleteItem(item.id)} />
         <Modal visible={modalOpen} animationType="fade">
           <View style={styles.modalContent}>
-            <Text style={styles.itemText}>{item.name}</Text>
+            <Text style={styles.itemTextHeader}>{item.name}</Text>
             <Text style={styles.modalBody}>{itemDescription(item)}</Text>
             <Icon name="remove" size={40} color="#000000" onPress={() => setModalOpen(false)} style={styles.modalToggle} />
           </View>
@@ -66,13 +78,15 @@ export default function List({ navigation }) {
     setExerciseLoading(false);
   };
   const renderExerciseItem = ({ item }) => {
-    const backgroundColor = item.id === selectedId ? "#fd90a3" : "#cffc5b";
+    const backgroundColor = item.id === selectedId ? "#cffc5b" : "#ff6f69";
     const color = item.id === selectedId ? "white" : "#000000";
+    // setSelectedId(item.id);
     if (item.language == 2) {
       return (
         <Item
           item={item}
-          onPress={() => setSelectedId(item.id)}
+          // onPress={() => onPressItem(item)}
+          // onPress={() => setSelectedId(item.id)}
           backgroundColor={{ backgroundColor }}
           textColor={{ color }}
           deleteItem={deleteItem}
@@ -117,6 +131,13 @@ const styles = StyleSheet.create({
     color: "black",
     fontWeight: "800",
     textAlign: "center"
+    // textTransformations: "uppercase"
+  },
+  itemTextHeader: {
+    color: "black",
+    fontWeight: "800",
+    textAlign: "center",
+    marginBottom: 15
     // textTransformations: "uppercase"
   },
   modalBody: {

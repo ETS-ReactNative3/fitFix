@@ -126,3 +126,4 @@
 
 | 03/09/22 | 16:05 | **<---BREAK--->** WIP: https://medium.com/swlh/passing-params-with-react-navigation-dd86c5de024c |
 | 03/09/22 | 17:08 | conditional rendering on item description in list component|
+| 03/09/22 | 18:21 | jsut noticed that clciking on an item in the list opens a completely different description, fixing|

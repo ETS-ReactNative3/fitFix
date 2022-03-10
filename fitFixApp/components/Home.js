@@ -5,7 +5,7 @@ import ImageOverlay from "react-native-image-overlay";
 
 export default function Home({ navigation }) {
   return (
-    <ImageBackground source={require("../assets/exercise_equipment.jpg")} resizeMode="cover" style={styles.image}>
+    <ImageBackground source={require("../assets/equipmentPhoto2..jpeg")} resizeMode="cover" style={styles.image}>
       <View style={{ flex: 1, alignItems: "center", justifyContent: "center" }}>
         <StatusBar style="auto" />
         <View style={styles.buttonSection}>
