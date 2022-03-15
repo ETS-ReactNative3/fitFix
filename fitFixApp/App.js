@@ -12,27 +12,12 @@ import { StatusBar } from "expo-status-bar";
 import { useState, useEffect } from "react";
 import { SafeAreaView } from "react-native-safe-area-context";
 const baseUrl = "https://wger.de/api/v2";
-const makeExerciseRequest = async () => {
-  try {
-    const response = await axios.get(`${baseUrl}/exerciseinfo/` /*, config*/);
-    if (response.status === 200) {
-      // response - object, eg { status: 200, message: 'OK' }
-      console.log("exercise success stuff");
-      console.log(response.data.results);
-      return response.data.results;
-    }
-    return false;
-  } catch (err) {
-    console.error(err);
-    return false;
-  }
-};
 
 /*
 https://wger.de/api/v2/equipment/
 https://wger.de/api/v2/muscle/`
 https://wger.de/api/v2/exerciseinfo/
- */
+*/
 const Stack = createNativeStackNavigator();
 
 function App({ navigation }) {
@@ -62,6 +47,22 @@ function App({ navigation }) {
 }
 
 export default App;
+
+// const makeExerciseRequest = async () => {
+//   try {
+//     const response = await axios.get(`${baseUrl}/exerciseinfo/` /*, config*/);
+//     if (response.status === 200) {
+//       // response - object, eg { status: 200, message: 'OK' }
+//       console.log("exercise success stuff");
+//       console.log(response.data.results);
+//       return response.data.results;
+//     }
+//     return false;
+//   } catch (err) {
+//     console.error(err);
+//     return false;
+//   }
+// };
 
 // import * as React from "react";
 // import { NavigationContainer, DefaultTheme } from "@react-navigation/native";

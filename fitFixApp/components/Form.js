@@ -35,15 +35,12 @@ export default function Form({ navigation }) {
     setEquipmentLoading(false);
   };
 
-  // setMuscleState(
-  //   muscleData.map(d => {
-  //     return {
-  //       select: false,
-  //       id: d.id,
-
-  //     }
-  //   })
-  // )
+  useEffect(() => {
+    fetchMuscleData();
+  }, []);
+  useEffect(() => {
+    fetchEquipmentData();
+  }, []);
 
   const renderMuscleItem = ({ item }) => {
     console.log("************");
@@ -56,9 +53,6 @@ export default function Form({ navigation }) {
       </View>
     );
   };
-  useEffect(() => {
-    fetchMuscleData();
-  }, []);
 
   const renderEquipmentItem = ({ item }) => {
     return (
@@ -68,9 +62,6 @@ export default function Form({ navigation }) {
       </View>
     );
   };
-  useEffect(() => {
-    fetchEquipmentData();
-  }, []);
 
   return (
     <SafeAreaView style={{ flex: 1, alignItems: "center", justifyContent: "center" }}>

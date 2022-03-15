@@ -42,12 +42,6 @@ const styles = StyleSheet.create({
     alignItems: "center",
     justifyContent: "center"
   },
-  // image: {
-  //   // width: 250,
-  //   // height: 120,
-  //   // borderRadius: 4,
-  //   // marginBottom: 5
-  // },
   image: {
     flex: 1,
     justifyContent: "center",
@@ -61,8 +55,5 @@ const styles = StyleSheet.create({
     paddingVertical: 10,
     paddingHorizontal: 12,
     marginBottom: 20
-  },
-  buttonSection: {
-    // textAlignVertical: "bottom"
   }
 });

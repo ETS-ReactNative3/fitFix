@@ -11,9 +11,7 @@ export default function List({ navigation }) {
   const [exerciseLoading, setExerciseLoading] = useState(true);
   const [modalOpen, setModalOpen] = useState(false);
   const [modalData, setModalData] = useState([exerciseData]);
-  // const itemOnPress = () => {
-  //   setModalOpen(true);
-  // };
+
   const itemDescription = item => {
     console.log(item.id);
     if (item.description != "<p>.</p>") {
@@ -64,14 +62,7 @@ export default function List({ navigation }) {
       </View>
     </TouchableOpacity>
   );
-  // const renderExerciseDetails = ({ item }) => {
-  //   return (
-  //     <View>
-  //       <Text>{item.name}</Text>
-  //       <Text>{item.description}</Text>
-  //     </View>
-  //   );
-  // };
+
   const fetchExerciseData = async () => {
     const resp = await fetch(`${baseUrl}/exercise/`);
     const data = await resp.json();
@@ -81,18 +72,8 @@ export default function List({ navigation }) {
   const renderExerciseItem = ({ item }) => {
     const backgroundColor = item.id === selectedId ? "#cffc5b" : "#ff6f69";
     const color = item.id === selectedId ? "white" : "#000000";
-    // setSelectedId(item.id);
     if (item.language == 2) {
-      return (
-        <Item
-          item={item}
-          // onPress={() => onPressItem(item)}
-          // onPress={() => setSelectedId(item.id)}
-          backgroundColor={{ backgroundColor }}
-          textColor={{ color }}
-          deleteItem={deleteItem}
-        />
-      );
+      return <Item item={item} backgroundColor={{ backgroundColor }} textColor={{ color }} deleteItem={deleteItem} />;
     }
   };
   useEffect(() => {
@@ -104,14 +85,9 @@ export default function List({ navigation }) {
       return prevItems.filter(item => item.id != id);
     });
   };
-  // const indItemData = id => {
-  //   setModalData(exerciseData => {
-  //     return exerciseData.filter(item => item.id === id);
-  //   });
-  // };
+
   return (
     <SafeAreaView style={{ flex: 1, alignItems: "center", justifyContent: "center" }}>
-      <Text style={{ fontSize: 25, color: "#000000" }}>EXERCISES</Text>
       <StatusBar style="auto" />
       {/* <Icon name="ellipsis-h" size={20} color="#000000" onPress={() => setModalOpen(true)} style={styles.modalToggle} /> */}
       {exerciseLoading && <Text>Loading..</Text>}
@@ -163,7 +139,8 @@ const styles = StyleSheet.create({
     padding: 20,
     marginVertical: 8,
     marginHorizontal: 16,
-    borderRadius: 10
+    borderRadius: 10,
+    marginTop: 20
   },
   title: {
     fontSize: 12
